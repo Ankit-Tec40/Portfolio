@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="resumeApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Ankit Kumar - Portfolio Resume</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #2c3e50;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .section {
+      margin-bottom: 50px;
+    }
+    .section h2 {
+      font-size: 2rem;
+      color: #3f51b5;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #3f51b5;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+    .info, .project, .skill-group {
+      background: #f9f9fb;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 5px solid #3f51b5;
+      border-radius: 8px;
+    }
+    .info h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #2c3e50;
+    }
+    .key {
+      font-weight: 600;
+      color: #333;
+    }
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .tech {
+      display: inline-block;
+      background-color: #e0e7ff;
+      color: #1a237e;
+      margin: 4px 6px 4px 0;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body ng-controller="ResumeController">
+  <div class="container">
+    <header>
+      <h1>{{resume.PersonalInfos.Name}}</h1>
+      <p>{{resume.PersonalInfos.Gmail}} | {{resume.PersonalInfos.PhonNo}} | {{resume.PersonalInfos.HomeTown}}</p>
+    </header>
+
+    <div class="section" ng-if="resume.Education">
+      <h2>Education</h2>
+      <div class="info" ng-repeat="edu in resume.Education">
+        <h3>{{edu.Degree}} in {{edu.Branch}}</h3>
+        <p>{{edu.College}}, {{edu.University}} ({{edu.StartYear}} – {{edu.EndYear}})</p>
+        <p><span class="key">CGPA:</span> {{edu.CGPA}}</p>
+      </div>
+    </div>
+
+    <div class="section" ng-if="resume.WorkExperience">
+      <h2>Work Experience</h2>
+      <div class="info" ng-repeat="work in resume.WorkExperience">
+        <h3>{{work.Role}} at {{work.CompanyName}}</h3>
+        <p><em>{{work.StartDate}} – {{work.EndDate}}, {{work.Location}}</em></p>
+        <p><span class="key">Technologies:</span>
+          <span class="tech" ng-repeat="tech in work.TechUsed">{{tech}}</span>
+        </p>
+        <p><span class="key">Responsibilities:</span></p>
+        <ul>
+          <li ng-repeat="res in work.Responsibilities">{{res}}</li>
+        </ul>
+        <div class="project" ng-repeat="proj in work.Projects">
+          <p><strong>Project:</strong> {{proj.ProjectName}}</p>
+          <p>{{proj.Description}}</p>
+          <p><span class="key">Tech Used:</span>
+            <span class="tech" ng-repeat="t in proj.TechUsed">{{t}}</span>
+          </p>
+          <p><span class="key">Role:</span> {{proj.Role}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" ng-if="resume.Skills">
+      <h2>Skills</h2>
+      <div class="skill-group" ng-repeat="(category, skillSet) in resume.Skills.PrimarySkills">
+        <p><strong>{{category}}:</strong>
+          <span class="tech" ng-repeat="s in skillSet">{{s}}</span>
+        </p>
+      </div>
+      <div class="skill-group" ng-if="resume.Skills.FamiliarWith">
+        <h3>Familiar With</h3>
+        <div ng-repeat="(category, skillSet) in resume.Skills.FamiliarWith">
+          <p><strong>{{category}}:</strong>
+            <span class="tech" ng-repeat="s in skillSet">{{s}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    angular.module('resumeApp', [])
+      .controller('ResumeController', function($scope, $http) {
+        $http.get('mydata.json')
+          .then(function(response) {
+            const cleanData = {};
+            for (const key in response.data) {
+              if (!key.endsWith('-off')) {
+                cleanData[key] = response.data[key];
+              }
+            }
+            $scope.resume = cleanData;
+          });
+      });
+  </script>
+</body>
+</html>
