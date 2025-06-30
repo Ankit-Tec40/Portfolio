@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="portfolioApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Portfolio</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="scripts.js"></script>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body ng-controller="PortfolioController">
+ <div class="sidebar">
+    <button class="nav-button" ng-click="setSection('home')" ng-class="{'active': currentSection === 'home'}">Home</button>
+    <button class="nav-button" ng-click="setSection('skills')" ng-class="{'active': currentSection === 'skills'}">Skills</button>
+    <button class="nav-button" ng-click="setSection('projects')" ng-class="{'active': currentSection === 'projects'}">Projects</button>
+    <button class="nav-button" ng-click="setSection('contact')" ng-class="{'active': currentSection === 'contact'}">Contact</button>
+  </div>
+
+  <div class="data-div">
+  <div ng-show="currentSection === 'home'">
+    <h1>{{ name }}</h1>
+    <p>{{ tagline }}</p>
+  </div>
+
+  <div ng-show="currentSection === 'skills'">
+    <h2>Skills</h2>
+    <ul>
+      <li ng-repeat="skill in skills">{{ skill }}</li>
+    </ul>
+  </div>
+
+  <div ng-show="currentSection === 'projects'">
+    <h2>Projects</h2>
+    <div ng-repeat="project in projects">
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+      <p><strong>Tech:</strong> {{ project.stack }}</p>
+      <a ng-if="project.link" href="{{ project.link }}" target="_blank">View</a>
+      <hr />
+    </div>
+  </div>
+  </div>
+</body>
+</html>
