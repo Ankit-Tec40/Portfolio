@@ -1,0 +1,236 @@
+{
+    "PersonalInfos": {
+        "Name": "Ankit Kumar",
+        "PhoneNo": "xxxxxxxxx",
+        "Email": "ankit@gmail.com",
+        "HomeTown": "Bihar",
+        "CurrentLocation": "Noida",
+        "DateOfBirth-off": "",
+        "Gender": "Male"
+    },
+    "Profiles": {
+        "LinkedIn": "",
+        "GitHub": "",
+        "Portfolio": "",
+        "LeetCode-off": "",
+        "HackerRank-off": "",
+        "Codeforces-off": "",
+        "Twitter-off": ""
+    },
+    "Summary": "Detail-oriented and versatile Software Developer with experience in backend development using .NET Core and Python. Skilled in building RESTful APIs, automating workflows, and integrating ML models into web applications. Strong understanding of data structures, object-oriented programming, and clean code practices. Hands-on experience with SQL databases, cloud platforms like Azure, and frontend basics for full-stack integration. Passionate about building practical tools and continuously learning new technologies. Seeking impactful roles where I can solve real-world problems, contribute to scalable systems, and grow as a developer.",
+    "Education": [
+        {
+            "Degree": "Bachelor of Technology",
+            "Branch": "Computer Science and Engineering",
+            "College": "Lovely Professional University",
+            "University": "Lovely Professional University",
+            "StartYear": "2019",
+            "EndYear": "2023",
+            "CGPA": "8.3"
+        }
+    ],
+    "Certifications-off": [
+        {
+            "Title": "",
+            "Issuer": "",
+            "IssueDate": "",
+            "CredentialURL": ""
+        }
+    ],
+    "WorkExperience": [
+        {
+            "CompanyName": "EaseMyTrip",
+            "Role": "Software Developer",
+            "StartDate": "Sept-2023",
+            "EndDate": "Current",
+            "Location": "Noida",
+            "TechUsed": [
+                "C#",
+                ".NET",
+                ".NET Core",
+                "SQL Server",
+                "MongoDB",
+                "REST API",
+                "Web Services",
+                "Python",
+                "Flask",
+                "AngularJS",
+                "HTML",
+                "CSS",
+                "JWT",
+                "Console Apps"
+            ],
+            "Skills": [
+                "Backend Development",
+                "API Integration",
+                "Database Management",
+                "System Optimization",
+                "Async Programming",
+                "Automation",
+                "Internal Tooling",
+                "Scheduling Services"
+            ],
+            "Responsibilities": [
+                "Develop and maintain scalable, production-grade backend systems for flight operations.",
+                "Integrate multiple third-party airline APIs for live booking and fare services.",
+                "Build internal tools and services to automate repetitive or manual operations.",
+                "Implement secure API flows with JWT-based authorization.",
+                "Optimize database and cache usage for performance improvements.",
+                "Design and deploy scheduler services for monitoring and reporting."
+            ],
+            "Projects": [
+                {
+                    "ProjectName": "Flight Booking API",
+                    "Description": "Built and maintained flight booking services integrating with third-party airline APIs including Travelport, Sabre, Indigo, Akasa, Air India Express, Flycreative, Vicky, Lords Travels, Travelopedia, PKfare, and various NDCs. Implemented async patterns to make APIs responsive and optimized caching logic, reducing memory usage by 40%.",
+                    "TechUsed": [
+                        ".NET Core",
+                        "C#",
+                        "SQL Server",
+                        "MongoDB",
+                        "REST API"
+                    ],
+                    "Role": "Backend developer responsible for core API logic, external integration, performance tuning, and production stability."
+                },
+                {
+                    "ProjectName": "Flight APIs Testing System",
+                    "Description": "Developed a secure internal tool for testing flight-related APIs like search, reprice, more fares, booking, SSRs (seat selection), rescheduling, etc. Included JWT-based login and a web interface built using AngularJS and Flask backend connected to MongoDB.",
+                    "TechUsed": [
+                        "Python",
+                        "Flask",
+                        "MongoDB",
+                        "AngularJS",
+                        "HTML",
+                        "CSS",
+                        "JWT"
+                    ],
+                    "Role": "Full-stack developer responsible for building both backend and frontend, API communication layer, and internal deployment."
+                },
+                {
+                    "ProjectName": "Scheduler Services",
+                    "Description": "Created a background scheduler service using .NET Core with `Timer` to automate tasks like updating booking purchases, currency rates, airline sectors, detecting fraud bookings and emailing responsible teams, generating daily booking reports, and monitoring API health with hourly WhatsApp alerts. Runs live in production.",
+                    "TechUsed": [
+                        ".NET Core",
+                        "C#",
+                        "Timer",
+                        "SQL Server",
+                        "Email API",
+                        "WhatsApp API"
+                    ],
+                    "Role": "Solo developer responsible for end-to-end logic, scheduling, delivery, and deployment of automated services."
+                },
+                {
+                    "ProjectName": "Internal Console Tools Suite",
+                    "Description": "Developed multiple in-house console applications to improve team productivity and automate tasks. Tools include: \n• JSON Request Builder for generating structured payloads for C# APIs\n• 20-20-20 Eye Reminder to reduce screen strain\n• Daily Task Tracker for logging workday tasks\n• Auto Git Pusher for daily commit automation\n• New Sector Merger to integrate new airline sectors into the system in real time.",
+                    "TechUsed": [
+                        "C#",
+                        ".NET Core",
+                        "Python",
+                        "Git",
+                        "Console App"
+                    ],
+                    "Role": "Designed and developed all tools independently for internal use at EaseMyTrip, focusing on developer experience and task automation."
+                }
+            ]
+        }
+    ],
+    "Projects-off": [
+        {
+            "ProjectName": "",
+            "Description": "",
+            "GitHubURL": "",
+            "LiveDemoURL": "",
+            "TechUsed": [],
+            "Role": "",
+            "Highlights": []
+        }
+    ],
+    "Skills": {
+        "PrimarySkills": {
+            "Languages": [
+                "C#",
+                "Python",
+                "SQL",
+                "JavaScript",
+                "HTML",
+                "CSS"
+            ],
+            "WebDevelopment": [
+                "REST API",
+                "Flask",
+                "AngularJS",
+                "JWT Authentication",
+                "Web Services"
+            ],
+            "Databases": [
+                "SQL Server",
+                "MongoDB"
+            ],
+            "Frameworks": [
+                ".NET Core",
+                ".NET Framework"
+            ],
+            "CloudPlatforms-off": [
+                "Azure (Basic Usage)"
+            ],
+            "Tools": [
+                "Git",
+                "GitHub",
+                "Visual Studio",
+                "VS Code",
+                "Postman",
+                "Console Apps",
+                "Timers in .NET",
+                "WhatsApp API",
+                "Email API"
+            ],
+            "OtherSkills": [
+                "Backend Development",
+                "API Integration",
+                "System Design",
+                "Asynchronous Programming",
+                "Automation",
+                "Performance Optimization",
+                "Scheduling Services",
+                "Internal Tooling",
+                "Problem Solving",
+                "Object-Oriented Programming"
+            ]
+        },
+        "FamiliarWith": {
+            "Languages": [
+                "C",
+                "C++",
+                "Java",
+                "Kotlin"
+            ],
+            "Frameworks": [
+                "Android SDK"
+            ],
+            "Topics": [
+                "Machine Learning",
+                "Artificial Intelligence"
+            ],
+            "Other": [
+                "Android App Development (Academic Projects)",
+                "Jupyter Notebook"
+            ]
+        }
+    },
+    "Achievements-off": [
+        {
+            "Title": "",
+            "Description": "",
+            "Year": ""
+        }
+    ],
+    "LanguagesKnown": [
+        "English",
+        "Hindi",
+        "Bhojpuri"
+    ],
+    "Interests-off": [],
+    "Availability-off": "",
+    "NoticePeriod": "3 Months",
+    "ExpectedSalary-off": "",
+    "Declaration-off": ""
+}
