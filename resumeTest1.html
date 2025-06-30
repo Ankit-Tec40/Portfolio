@@ -134,7 +134,7 @@
   <script>
     angular.module('resumeApp', [])
       .controller('ResumeController', function($scope, $http) {
-        $http.get('mydata.json')
+        $http.get('mydataOnePage.json')
           .then(function(response) {
             const cleanData = {};
             for (const key in response.data) {

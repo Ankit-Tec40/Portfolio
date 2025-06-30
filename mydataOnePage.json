@@ -1,0 +1,72 @@
+{
+  "PersonalInfos": {
+    "Name": "Ankit Kumar",
+    "PhonNo": "xxxxxxxxx",
+    "Gmail": "ankit@gmail.com",
+    "HomeTown": "Bihar",
+    "CurrentLocation": "Noida",
+    "Gender": "Male"
+  },
+  "Summary": "Software Developer experienced in .NET Core and Python, specializing in scalable backend systems, API integrations, and internal tools. Skilled in C#, Flask, MongoDB, and async programming with a strong foundation in DSA and system design.",
+  "Education": [
+    {
+      "Degree": "B.Tech",
+      "Branch": "Computer Science",
+      "College": "Lovely Professional University",
+      "University": "LPU",
+      "StartYear": "2019",
+      "EndYear": "2023",
+      "CGPA": "8.3"
+    }
+  ],
+  "WorkExperience": [
+    {
+      "CompanyName": "EaseMyTrip",
+      "Role": "Software Developer",
+      "StartDate": "Sept-2023",
+      "EndDate": "Current",
+      "Location": "Noida",
+      "TechUsed": [
+        "C#", ".NET Core", "SQL Server", "MongoDB", "REST API", "Python", "Flask", "AngularJS"
+      ],
+      "Responsibilities": [
+        "Built scalable backend APIs and automation tools for flight operations.",
+        "Integrated third-party airline APIs and improved performance with async processing.",
+        "Developed internal testing tools, schedulers, and productivity utilities."
+      ],
+      "Projects": [
+        {
+          "ProjectName": "Flight Booking API",
+          "Description": "Integrated with Travelport, Sabre, Indigo & others using async patterns and optimized caching by 40%.",
+          "TechUsed": [".NET Core", "C#", "SQL Server"]
+        },
+        {
+          "ProjectName": "Flight APIs Testing Tool",
+          "Description": "Full-stack tool using Flask + AngularJS to test API flows with JWT login and MongoDB.",
+          "TechUsed": ["Python", "Flask", "AngularJS"]
+        },
+        {
+          "ProjectName": "Scheduler Services",
+          "Description": "Live .NET background service automating reports, fraud checks, WhatsApp alerts.",
+          "TechUsed": [".NET Core", "Timer", "SQL Server"]
+        }
+      ]
+    }
+  ],
+  "Skills": {
+    "PrimarySkills": {
+      "Languages": ["C#", "Python", "SQL"],
+      "Frameworks": [".NET Core", "Flask"],
+      "WebDevelopment": ["REST API", "JWT", "AngularJS"],
+      "Databases": ["SQL Server", "MongoDB"],
+      "Tools": ["Git", "Postman", "Console Apps"],
+      "OtherSkills": ["Backend Dev", "Async Programming", "Automation"]
+    },
+    "FamiliarWith": {
+      "Languages": ["C", "C++", "Java", "Kotlin"],
+      "Topics": ["ML", "AI"]
+    }
+  },
+  "LanguagesKnown": ["English", "Hindi", "Bhojpuri"],
+  "NoticePeriod": "3 Months"
+}
