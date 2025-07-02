@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="resumeApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Ankit Kumar - Resume</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      padding: 20px;
+    }
+    .resume {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #222;
+    }
+    header p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .section h2 {
+      font-size: 1.3rem;
+      color: #444;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 10px;
+      padding-bottom: 3px;
+    }
+    .edu, .exp, .project, .skills {
+      margin-bottom: 10px;
+    }
+    .edu h3, .exp h3, .project h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #222;
+    }
+    .meta {
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 5px;
+    }
+    ul {
+      padding-left: 20px;
+      font-size: 0.9rem;
+    }
+    .pill {
+      display: inline-block;
+      background: #e0e0e0;
+      color: #333;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      margin: 2px;
+      border-radius: 20px;
+    }
+    .download-btn {
+      text-align: right;
+      max-width: 900px;
+      margin: 0 auto 10px auto;
+    }
+    .download-btn button {
+      padding: 6px 16px;
+      font-size: 0.9rem;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .download-btn button:hover {
+      background-color: #1f6390;
+    }
+  </style>
+</head>
+<body ng-controller="ResumeController">
+
+  <div class="download-btn">
+    <button onclick="exportToPDF()">📄 Download as PDF</button>
+  </div>
+
+  <div class="resume" id="resume-content">
+    <header>
+      <h1>{{resume.PersonalInfos.Name}}</h1>
+      <p>{{resume.PersonalInfos.Gmail}} | {{resume.PersonalInfos.PhonNo}} | {{resume.PersonalInfos.CurrentLocation}}</p>
+    </header>
+
+    <div class="section" ng-if="resume.Summary">
+      <h2>Summary</h2>
+      <p style="font-size: 0.95rem; line-height: 1.4;">{{resume.Summary}}</p>
+    </div>
+
+    <div class="section" ng-if="resume.Education">
+      <h2>Education</h2>
+      <div class="edu" ng-repeat="edu in resume.Education">
+        <h3>{{edu.Degree}} in {{edu.Branch}}</h3>
+        <p class="meta">{{edu.College}}, {{edu.University}} | {{edu.StartYear}} - {{edu.EndYear}} | CGPA: {{edu.CGPA}}</p>
+      </div>
+    </div>
+
+    <div class="section" ng-if="resume.WorkExperience">
+      <h2>Work Experience</h2>
+      <div class="exp" ng-repeat="work in resume.WorkExperience">
+        <h3>{{work.Role}} at {{work.CompanyName}}</h3>
+        <p class="meta">{{work.StartDate}} - {{work.EndDate}} | {{work.Location}}</p>
+        <ul>
+          <li ng-repeat="res in work.Responsibilities">{{res}}</li>
+        </ul>
+
+        <div class="project" ng-repeat="proj in work.Projects">
+          <h4>{{proj.ProjectName}}</h4>
+          <p style="font-size: 0.85rem;">{{proj.Description}}</p>
+          <div ng-if="proj.TechUsed.length">
+            <span class="pill" ng-repeat="t in proj.TechUsed">{{t}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" ng-if="resume.Skills">
+      <h2>Skills</h2>
+      <div class="skills" ng-repeat="(category, items) in resume.Skills.PrimarySkills">
+        <p><strong>{{category}}:</strong>
+          <span class="pill" ng-repeat="s in items">{{s}}</span>
+        </p>
+      </div>
+      <div class="skills" ng-if="resume.Skills.FamiliarWith">
+        <p><strong>Familiar With:</strong></p>
+        <div ng-repeat="(category, items) in resume.Skills.FamiliarWith">
+          <p>{{category}}:
+            <span class="pill" ng-repeat="s in items">{{s}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    angular.module('resumeApp', [])
+      .controller('ResumeController', function($scope, $http) {
+        $http.get('mydata.json')
+          .then(function(response) {
+            const cleanData = {};
+            for (const key in response.data) {
+              if (!key.endsWith('-off')) {
+                cleanData[key] = response.data[key];
+              }
+            }
+            $scope.resume = cleanData;
+          });
+
+    });
+
+    function exportToPDF() {
+      const element = document.getElementById('resume-content');
+      const opt = {
+        margin: 0.3,
+        filename: 'Ankit_Kumar_Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
+</body>
+</html>

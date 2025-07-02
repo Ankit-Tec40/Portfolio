@@ -1,44 +1,196 @@
 <!DOCTYPE html>
-<html ng-app="portfolioApp">
+<html lang="en" ng-app="portfolioApp">
 <head>
   <meta charset="UTF-8">
-  <title>AngularJS Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ankit Kumar | Portfolio</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-  <script src="scripts.js"></script>
-  <link rel="stylesheet" href="style.css" />
-
+  <style>
+    * {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #f4f4f4, #eaeaea);
+      color: #333;
+    }
+    header, footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: #34495e;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+    li::before {
+      content: '✔️';
+      margin-right: 0.5rem;
+    }
+    footer a {
+      color: #00aced;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body ng-controller="PortfolioController">
- <div class="sidebar">
-    <button class="nav-button" ng-click="setSection('home')" ng-class="{'active': currentSection === 'home'}">Home</button>
-    <button class="nav-button" ng-click="setSection('skills')" ng-class="{'active': currentSection === 'skills'}">Skills</button>
-    <button class="nav-button" ng-click="setSection('projects')" ng-class="{'active': currentSection === 'projects'}">Projects</button>
-    <button class="nav-button" ng-click="setSection('contact')" ng-class="{'active': currentSection === 'contact'}">Contact</button>
+
+<header>
+  <h1>{{data.PersonalInfos.Name}}</h1>
+  <p>Backend Developer | .NET | Python | SQL | REST APIs</p>
+</header>
+
+<nav>
+  <a href="#summary">Summary</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#certs">Certifications</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
+  <a href="#languages">Languages</a>
+</nav>
+
+<div class="container">
+  <div id="summary" class="section">
+    <h2>Summary</h2>
+    <p>{{data.Summary}}</p>
   </div>
 
-  <div class="data-div">
-  <div ng-show="currentSection === 'home'">
-    <h1>{{ name }}</h1>
-    <p>{{ tagline }}</p>
-  </div>
-
-  <div ng-show="currentSection === 'skills'">
-    <h2>Skills</h2>
-    <ul>
-      <li ng-repeat="skill in skills">{{ skill }}</li>
-    </ul>
-  </div>
-
-  <div ng-show="currentSection === 'projects'">
-    <h2>Projects</h2>
-    <div ng-repeat="project in projects">
-      <h3>{{ project.title }}</h3>
-      <p>{{ project.description }}</p>
-      <p><strong>Tech:</strong> {{ project.stack }}</p>
-      <a ng-if="project.link" href="{{ project.link }}" target="_blank">View</a>
-      <hr />
+  <div id="experience" class="section">
+    <h2>Work Experience</h2>
+    <div class="card" ng-repeat="job in data.WorkExperience">
+      <h3>{{job.Role}} @ {{job.CompanyName}}</h3>
+      <p><strong>Duration:</strong> {{job.StartDate}} – {{job.EndDate}} | {{job.Location}}</p>
+      <p><strong>Responsibilities:</strong></p>
+      <ul><li ng-repeat="resp in job.Responsibilities">{{resp}}</li></ul>
     </div>
   </div>
+
+  <div id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="card" ng-repeat="proj in data.Projects">
+      <h3>{{proj.ProjectName}}</h3>
+      <p>{{proj.Description}}</p>
+      <ul>
+        <li><strong>Tech Used:</strong> {{proj.TechUsed.join(', ')}}</li>
+        <li><strong>Role:</strong> {{proj.Role}}</li>
+        <li ng-repeat="hl in proj.Highlights">{{hl}}</li>
+      </ul>
+    </div>
   </div>
+
+  <div id="certs" class="section">
+    <h2>Certifications</h2>
+    <div class="card" ng-repeat="cert in data.Certifications">
+      <h3>{{cert.Title}} - {{cert.Issuer}}</h3>
+      <p><strong>Date:</strong> {{cert.IssueDate}}</p>
+      <p><strong>Skills:</strong> {{cert.Skills.join(', ')}}</p>
+    </div>
+  </div>
+
+  <div id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="card">
+      <p><strong>Languages:</strong> {{data.Skills.PrimarySkills.Languages.join(', ')}}</p>
+      <p><strong>Web:</strong> {{data.Skills.PrimarySkills.WebDevelopment.join(', ')}}</p>
+      <p><strong>Databases:</strong> {{data.Skills.PrimarySkills.Databases.join(', ')}}</p>
+      <p><strong>Frameworks:</strong> {{data.Skills.PrimarySkills.Frameworks.join(', ')}}</p>
+      <p><strong>Tools:</strong> {{data.Skills.PrimarySkills.Tools.join(', ')}}</p>
+      <p><strong>Concepts:</strong> {{data.Skills.PrimarySkills.OtherSkills.join(', ')}}</p>
+    </div>
+  </div>
+
+  <div id="education" class="section">
+    <h2>Education</h2>
+    <div class="card">
+      <p><strong>{{data.Education[0].Degree}}, {{data.Education[0].Branch}}</strong></p>
+      <p>{{data.Education[0].College}} | {{data.Education[0].StartYear}} – {{data.Education[0].EndYear}} | CGPA: {{data.Education[0].CGPA}}</p>
+    </div>
+  </div>
+
+  <div id="languages" class="section">
+    <h2>Languages Known</h2>
+    <div class="card">
+      <p>{{data.LanguagesKnown.join(', ')}}</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Connect: <a href="{{data.Profiles.LinkedIn}}" target="_blank">LinkedIn</a> | <a href="{{data.Profiles.GitHub}}" target="_blank">GitHub</a></p>
+</footer>
+
+<script>
+  angular.module('portfolioApp', []).controller('PortfolioController', function($scope, $http) {
+    $http.get('mydata.json')
+          .then(function(response) {
+            const cleanData = {};
+            for (const key in response.data) {
+              if (!key.endsWith('-off')) {
+                cleanData[key] = response.data[key];
+              }
+            }
+            $scope.data = cleanData;
+          });
+  });
+</script>
+
 </body>
 </html>
