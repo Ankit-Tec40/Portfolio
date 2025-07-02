@@ -96,6 +96,30 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    .title {
+      margin: 0.3rem 0 1rem;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 0.95rem;
+      color: #ddd;
+      flex-wrap: wrap;
+    }
+
+    .contact-info a {
+      color: #00aced;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body ng-controller="PortfolioController">
@@ -104,8 +128,10 @@
   <img src="myImage.jpg" alt="Ankit Kumar" class="profile-pic">
   <h1>{{data.PersonalInfos.Name}}</h1>
   <p>{{data.PersonalInfos.Heading}}</p>
-  <p>Email: <a href="mailto:{{data.PersonalInfos.Gmail}}">{{data.PersonalInfos.Gmail}}</a></p>
-  <p>Phone: {{data.PersonalInfos.PhoneNumber}}</p>
+  <div class="contact-info">
+    <span>&#9993; <a href="mailto:{{data.PersonalInfos.Gmail}}">{{data.PersonalInfos.Gmail}}</a></span>
+    <span>&#128222; {{data.PersonalInfos.PhoneNumber}}</span>
+  </div>
 </header>
 
 <nav>
