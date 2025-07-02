@@ -25,6 +25,14 @@
       margin: 0;
       font-size: 2.5rem;
     }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      margin-top: 1rem;
+    }
     nav {
       display: flex;
       justify-content: center;
@@ -93,8 +101,9 @@
 <body ng-controller="PortfolioController">
 
 <header>
+  <img src="myImage.jpg" alt="Ankit Kumar" class="profile-pic">
   <h1>{{data.PersonalInfos.Name}}</h1>
-  <p>Backend Developer | .NET | Python | SQL | REST APIs</p>
+  <p>{{data.PersonalInfos.Heading}}</p>
 </header>
 
 <nav>
@@ -176,7 +185,6 @@
 <footer>
   <p>Connect: <a href="{{data.Profiles.LinkedIn}}" target="_blank">LinkedIn</a> | <a href="{{data.Profiles.GitHub}}" target="_blank">GitHub</a></p>
 </footer>
-
 <script>
   angular.module('portfolioApp', []).controller('PortfolioController', function($scope, $http) {
     $http.get('mydata.json')
