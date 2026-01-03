@@ -127,6 +127,25 @@
                 "ScottyPlot",
                 "Git"
             ],
+            "ExternalAPIs": {
+                "Integrated": [
+                    "Travelport Json",
+                    "Sabre",
+                    "SabreNDC",
+                    "PKFare",
+                    "FlyCreative",
+                    "Vicky API",
+                    "Travelopedia API"
+                ],
+                "WorkedOn": [
+                    "Travelport UAPI",
+                    "Indigo",
+                    "Airindia Express",
+                    "AirAsia",
+                    "Akasa",
+                    "SpiceJet"
+                ]
+            },
             "Overview": "Backend developer responsible for building, integrating, modernizing, and scaling flight booking systems. Experience spans legacy WCF services, modern async REST APIs, internal tools, scheduler services, and platform migration initiatives.",
             "Responsibilities": [
                 "Developed and maintained scalable, production-grade backend systems for flight operations using .NET and Python.",

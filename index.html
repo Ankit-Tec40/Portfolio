@@ -561,21 +561,21 @@
                 </div>
 
                 <div class="info-box">
-                    <div class="info-item">
+                    <div class="info-item" ng-if="data.NoticePeriod">
                         <div class="info-label">Notice Period</div>
                         <div class="info-val">{{data.NoticePeriod}}</div>
                     </div>
-                    <div class="info-item">
+                    <div class="info-item" ng-if="data.PersonalInfos.CurrentLocation">
                         <div class="info-label">Current Location</div>
                         <div class="info-val">{{data.PersonalInfos.CurrentLocation}}</div>
                     </div>
-                    <div class="info-item">
+                    <div class="info-item" ng-if="data.PersonalInfos.Gmail">
                         <div class="info-label">Email</div>
                         <div class="info-val" style="font-size: 0.9rem;">
                             <a href="mailto:{{data.PersonalInfos.Gmail}}">{{data.PersonalInfos.Gmail}}</a>
                         </div>
                     </div>
-                    <div class="info-item">
+                    <div class="info-item" ng-if="data.PersonalInfos.PhoneNumber">
                         <div class="info-label">Phone</div>
                         <div class="info-val">{{data.PersonalInfos.PhoneNumber}}</div>
                     </div>
@@ -601,11 +601,11 @@
                     </div>
                     <div class="glass-card stat-card">
                         <div class="stat-num">{{totalProjects}}+</div>
-                        <div class="stat-label">Projects Delivered</div>
+                        <div class="stat-label">Projects & Modules</div>
                     </div>
                     <div class="glass-card stat-card">
-                        <div class="stat-num">60+</div>
-                        <div class="stat-label">Airline Integrations</div>
+                        <div class="stat-num">{{totalIntegrations}}+</div>
+                        <div class="stat-label">API Integrations</div>
                     </div>
                 </div>
 
@@ -653,6 +653,39 @@
                                 <strong style="color: #fff; display: block; margin-bottom: 0.5rem;">Role
                                     Overview</strong>
                                 <span style="color: #cbd5e1;">{{job.Overview}}</span>
+                            </div>
+
+                            <!-- External APIs Display -->
+                            <div ng-if="job.ExternalAPIs" style="margin-bottom: 1.5rem;">
+
+                                <!-- Integrated -->
+                                <div ng-if="job.ExternalAPIs.Integrated && job.ExternalAPIs.Integrated.length > 0"
+                                    style="margin-bottom: 1rem;">
+                                    <h4
+                                        style="font-size: 0.95rem; color: var(--accent-success); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                                        <i class="fas fa-plug"></i> Integrated Directly
+                                    </h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                        <span ng-repeat="api in job.ExternalAPIs.Integrated"
+                                            style="font-size: 0.85rem; background: rgba(16, 185, 129, 0.1); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.2); padding: 0.25rem 0.6rem; border-radius: 4px;">
+                                            {{api}}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Worked On -->
+                                <div ng-if="job.ExternalAPIs.WorkedOn && job.ExternalAPIs.WorkedOn.length > 0">
+                                    <h4
+                                        style="font-size: 0.95rem; color: var(--accent-secondary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                                        <i class="fas fa-cogs"></i> Managed / Scaled
+                                    </h4>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                        <span ng-repeat="api in job.ExternalAPIs.WorkedOn"
+                                            style="font-size: 0.85rem; background: rgba(6, 182, 212, 0.1); color: #67e8f9; border: 1px solid rgba(6, 182, 212, 0.2); padding: 0.25rem 0.6rem; border-radius: 4px;">
+                                            {{api}}
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
 
                             <ul class="bullet-list">
@@ -793,13 +826,23 @@
 
                 // Calculate stats
                 let count = 0;
+                let integrationCount = 0;
+
                 if ($scope.data.PersonalProjects) count += $scope.data.PersonalProjects.length;
+
                 if ($scope.data.WorkExperience) {
                     $scope.data.WorkExperience.forEach(job => {
                         if (job.Projects) count += job.Projects.length;
+
+                        // Count Integrations
+                        if (job.ExternalAPIs) {
+                            if (job.ExternalAPIs.Integrated) integrationCount += job.ExternalAPIs.Integrated.length;
+                            // Optional: Add 'WorkedOn' to count if desired, currently purely 'Integrated'
+                        }
                     });
                 }
                 $scope.totalProjects = count;
+                $scope.totalIntegrations = integrationCount > 0 ? integrationCount : "5"; // Fallback if 0
 
             }, function (error) {
                 console.error("Error loading mydata_E.json", error);
