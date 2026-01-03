@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="portfolioApp" ng-cloak>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ankit Kumar | Portfolio</title>
+
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
   <style>
     * {
       scroll-behavior: smooth;
     }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       background: linear-gradient(to bottom, #f4f4f4, #eaeaea);
       color: #333;
     }
-    header, footer {
+
+    header,
+    footer {
       background: #2c3e50;
       color: white;
       text-align: center;
       padding: 2rem 1rem;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid white;
-      margin-top: 1rem;
-    }
+
     nav {
       display: flex;
       justify-content: center;
@@ -43,199 +38,196 @@
       top: 0;
       z-index: 10;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
+
     .container {
       padding: 2rem;
       max-width: 1200px;
       margin: auto;
-      animation: fadeIn 0.5s ease-in-out;
     }
+
     h2 {
       color: #2c3e50;
       border-bottom: 2px solid #ccc;
       padding-bottom: 0.5rem;
-      margin-top: 2rem;
     }
-    .section {
-      margin-bottom: 2rem;
-    }
+
     .card {
       background: white;
       padding: 1rem;
       margin-bottom: 1rem;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-    .card:hover {
-      transform: scale(1.02);
-    }
+
     ul {
       list-style: none;
       padding-left: 1rem;
     }
+
     li::before {
       content: '✔️';
       margin-right: 0.5rem;
     }
+
     footer a {
       color: #00aced;
       text-decoration: none;
     }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .title {
-      margin: 0.3rem 0 1rem;
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      font-size: 0.95rem;
-      color: #ddd;
-      flex-wrap: wrap;
-    }
-    .contact-info a {
-      color: #00aced;
-      text-decoration: none;
-    }
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
+
 <body ng-controller="PortfolioController">
 
-<header>
-  <img src="myImage.jpg" alt="Ankit Kumar" class="profile-pic">
-  <h1>{{data.PersonalInfos.Name}}</h1>
-  <p>{{data.PersonalInfos.Heading}}</p>
-  <div class="contact-info">
-    <span>&#9993; <a href="mailto:{{data.PersonalInfos.Gmail}}">{{data.PersonalInfos.Gmail}}</a></span>
-    <span>&#128222; {{data.PersonalInfos.PhoneNumber}}</span>
-  </div>
-</header>
+  <header>
+    <h1>{{data.PersonalInfos.Name}}</h1>
+    <p>{{data.PersonalInfos.Heading}}</p>
+    <p>{{data.PersonalInfos.Gmail}} | {{data.PersonalInfos.PhoneNumber}}</p>
+  </header>
 
-<nav>
-  <a href="#summary">Summary</a>
-  <a href="#experience">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#certs">Certifications</a>
-  <a href="#skills">Skills</a>
-  <a href="#education">Education</a>
-  <a href="#languages">Languages</a>
-</nav>
+  <nav>
+    <a href="#summary">Summary</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#certs">Certifications</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#languages">Languages</a>
+  </nav>
 
-<div class="container">
-  <div id="summary" class="section">
-    <h2>Summary</h2>
-    <p>{{data.Summary}}</p>
-  </div>
+  <div class="container">
 
-  <div id="experience" class="section">
-    <h2>Work Experience</h2>
-    <div class="card" ng-repeat="job in data.WorkExperience">
-      <h3>{{job.Role}} @ {{job.CompanyName}}</h3>
-      <p><strong>Duration:</strong> {{job.StartDate}} – {{job.EndDate}} | {{job.Location}}</p>
-      <p><strong>Responsibilities:</strong></p>
-      <ul><li ng-repeat="resp in job.Responsibilities">{{resp}}</li></ul>
+    <!-- SUMMARY -->
+    <div id="summary">
+      <h2>Summary</h2>
+      <p>{{data.Summary}}</p>
+    </div>
 
-      <div ng-if="job.Projects">
-        <h4>Company Projects:</h4>
-        <div class="card" ng-repeat="cp in job.Projects">
-          <h4>{{cp.ProjectName}}</h4>
-          <p>{{cp.Description}}</p>
-          <ul>
-            <li><strong>Tech Used:</strong> {{cp.TechUsed.join(', ')}}</li>
-            <li><strong>Role:</strong> {{cp.Role}}</li>
-            <li><strong>Outcome:</strong> {{cp.Outcome}}</li>
-          </ul>
+    <!-- EXPERIENCE -->
+    <div id="experience" ng-if="data.WorkExperience && data.WorkExperience.length">
+      <h2>Work Experience</h2>
+
+      <div class="card" ng-repeat="job in data.WorkExperience">
+        <h3>{{job.Role}} @ {{job.CompanyName}}</h3>
+        <p>{{job.StartDate}} – {{job.EndDate}} | {{job.Location}}</p>
+
+        <ul>
+          <li ng-repeat="r in job.Responsibilities">{{r}}</li>
+        </ul>
+
+        <div ng-if="job.Projects && job.Projects.length">
+          <h4>Company Projects</h4>
+
+          <div class="card" ng-repeat="p in job.Projects">
+            <strong>{{p.ProjectName}}</strong>
+            <p>{{p.Description}}</p>
+            <p><strong>Tech:</strong> {{p.TechUsed.join(', ')}}</p>
+            <p><strong>Outcome:</strong> {{p.Outcome}}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="projects" class="section">
-    <h2>Projects</h2>
-    <div class="card" ng-repeat="proj in data.Projects">
-      <h3>{{proj.ProjectName}}</h3>
-      <p>{{proj.Description}}</p>
-      <ul>
-        <li><strong>Tech Used:</strong> {{proj.TechUsed.join(', ')}}</li>
-        <li><strong>Role:</strong> {{proj.Role}}</li>
-        <li ng-repeat="hl in proj.Highlights">{{hl}}</li>
-      </ul>
+    <!-- PERSONAL PROJECTS -->
+    <div id="projects" ng-if="data.PersonalProjects && data.PersonalProjects.length">
+      <h2>Personal Projects</h2>
+
+      <div class="card" ng-repeat="proj in data.PersonalProjects">
+        <h3>{{proj.ProjectName}}</h3>
+        <p>{{proj.Description}}</p>
+        <p><strong>Tech:</strong> {{proj.TechUsed.join(', ')}}</p>
+        <p><strong>Role:</strong> {{proj.Role}}</p>
+
+        <ul ng-if="proj.Highlights && proj.Highlights.length">
+          <li ng-repeat="h in proj.Highlights">{{h}}</li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div id="certs" class="section">
-    <h2>Certifications</h2>
-    <div class="card" ng-repeat="cert in data.Certifications">
-      <h3>{{cert.Title}} - {{cert.Issuer}}</h3>
-      <p><strong>Date:</strong> {{cert.IssueDate}}</p>
-      <p><strong>Skills:</strong> {{cert.Skills.join(', ')}}</p>
+    <!-- CERTIFICATIONS -->
+    <div id="certs" ng-if="data.Certifications && data.Certifications.length">
+      <h2>Certifications</h2>
+
+      <div class="card" ng-repeat="c in data.Certifications">
+        <strong>{{c.Title}}</strong> – {{c.Issuer}}
+        <p>{{c.IssueDate}}</p>
+        <p><strong>Skills:</strong> {{c.Skills.join(', ')}}</p>
+      </div>
     </div>
-  </div>
 
-  <div id="skills" class="section">
-    <h2>Skills</h2>
-    <div class="card">
-      <p><strong>Languages:</strong> {{data.Skills.PrimarySkills.Languages.join(', ')}}</p>
-      <p><strong>Web:</strong> {{data.Skills.PrimarySkills.WebDevelopment.join(', ')}}</p>
-      <p><strong>Databases:</strong> {{data.Skills.PrimarySkills.Databases.join(', ')}}</p>
-      <p><strong>Frameworks:</strong> {{data.Skills.PrimarySkills.Frameworks.join(', ')}}</p>
-      <p><strong>Tools:</strong> {{data.Skills.PrimarySkills.Tools.join(', ')}}</p>
-      <p><strong>Concepts:</strong> {{data.Skills.PrimarySkills.OtherSkills.join(', ')}}</p>
+    <!-- SKILLS (FIXED & SAFE) -->
+    <div id="skills" ng-if="data.Skills">
+      <h2>Skills</h2>
+
+      <div class="card" ng-if="data.Skills.PrimarySkills && data.Skills.PrimarySkills.length">
+        <h3>Primary Skills</h3>
+
+        <div ng-repeat="s in data.Skills.PrimarySkills" ng-if="s.Items && s.Items.length">
+          <p><strong>{{s.Category}}:</strong> {{s.Items.join(', ')}}</p>
+        </div>
+      </div>
+
+      <div class="card" ng-if="data.Skills.FamiliarWith && data.Skills.FamiliarWith.length">
+        <h3>Familiar With</h3>
+
+        <div ng-repeat="s in data.Skills.FamiliarWith" ng-if="s.Items && s.Items.length">
+          <p><strong>{{s.Category}}:</strong> {{s.Items.join(', ')}}</p>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div id="education" class="section">
-    <h2>Education</h2>
-    <div class="card">
-      <p><strong>{{data.Education[0].Degree}}, {{data.Education[0].Branch}}</strong></p>
-      <p>{{data.Education[0].College}} | {{data.Education[0].StartYear}} – {{data.Education[0].EndYear}} | CGPA: {{data.Education[0].CGPA}}</p>
+    <!-- EDUCATION -->
+    <div id="education" ng-if="data.Education && data.Education.length">
+      <h2>Education</h2>
+      <div class="card">
+        <strong>{{data.Education[0].Degree}}</strong><br>
+        {{data.Education[0].College}} ({{data.Education[0].StartYear}} – {{data.Education[0].EndYear}})
+        | CGPA: {{data.Education[0].CGPA}}
+      </div>
     </div>
-  </div>
 
-  <div id="languages" class="section">
-    <h2>Languages Known</h2>
-    <div class="card">
-      <p>{{data.LanguagesKnown.join(', ')}}</p>
+    <!-- LANGUAGES -->
+    <div id="languages" ng-if="data.LanguagesKnown && data.LanguagesKnown.length">
+      <h2>Languages Known</h2>
+      <div class="card">
+        {{data.LanguagesKnown.join(', ')}}
+      </div>
     </div>
-  </div>
-</div>
 
-<footer>
-  <p>Connect: <a href="{{data.Profiles.LinkedIn}}" target="_blank">LinkedIn</a> | <a href="{{data.Profiles.GitHub}}" target="_blank">GitHub</a></p>
-</footer>
-<script>
-  angular.module('portfolioApp', []).controller('PortfolioController', function($scope, $http) {
-    $http.get('mydata.json')
-          .then(function(response) {
-            const cleanData = {};
-            for (const key in response.data) {
-              if (!key.endsWith('-off')) {
-                cleanData[key] = response.data[key];
-              }
+  </div>
+
+  <footer>
+    <p>
+      <a href="{{data.Profiles.LinkedIn}}" target="_blank">LinkedIn</a> |
+      <a href="{{data.Profiles.GitHub}}" target="_blank">GitHub</a>
+    </p>
+  </footer>
+
+  <script>
+    angular.module('portfolioApp', [])
+      .controller('PortfolioController', function ($scope, $http) {
+
+        $http.get('mydata.json').then(function (response) {
+
+          // remove all -off keys (top-level only)
+          const clean = {};
+          for (const key in response.data) {
+            if (!key.endsWith('-off')) {
+              clean[key] = response.data[key];
             }
-            $scope.data = cleanData;
-          });
-  });
-</script>
+          }
+
+          $scope.data = clean;
+        });
+
+      });
+  </script>
 
 </body>
+
 </html>

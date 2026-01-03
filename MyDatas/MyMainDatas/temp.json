@@ -1,10 +1,10 @@
 {
     "PersonalInfos": {
         "Name": "Ankit Kumar",
-        "PhoneNumber": "0000000000",
+        "PhoneNumber": "00000000",
         "Gmail": "ankit@gmail.com",
         "HomeTown": "Bihar",
-        "CurrentLocation": "India",
+        "CurrentLocation": "Noida",
         "DateOfBirth-off": "",
         "Gender": "Male",
         "Heading": "Backend Developer | .NET | Python | SQL | REST APIs",
@@ -20,7 +20,7 @@
         "Codeforces-off": "",
         "Twitter-off": ""
     },
-    "Summary": "Backend Engineer with 3+ years of experience building and modernizing large-scale flight booking systems using .NET and Python. Strong expertise in designing asynchronous REST APIs, integrating 60+ third-party airline providers, and migrating legacy WCF platforms to modern .NET 8 services. Experienced in SQL Server and MongoDB, internal tooling, scheduler services, and Linux-based deployments. Proven ability to work on high-traffic, business-critical systems with a focus on performance, scalability, and reliability.",
+    "Summary": "Backend Engineer with 3+ years of experience building and modernizing large-scale flight booking systems using .NET and Python. Strong expertise in designing asynchronous REST APIs, working across integrations for multiple third-party airline providers, and migrating legacy WCF platforms to modern .NET 8 services. Experienced in SQL Server and MongoDB, internal tooling, scheduler services, and Linux-based deployments. Proven ability to work on high-traffic, business-critical systems with a focus on performance, scalability, and reliability.",
     "Education": [
         {
             "Degree": "Bachelor of Technology",
@@ -233,7 +233,7 @@
             ]
         }
     ],
-    "Projects": [
+    "PersonalProjects": [
         {
             "ProjectName": "Full Screen Clock – Android App",
             "Description": "Designed a full-screen digital clock app for tablets and mobile devices. Used for visibility during study sessions, desk timers, and digital wall clocks. Supports 12/24-hour format with custom fonts and themes.",
@@ -304,6 +304,7 @@
                 ".NET Framework 4.7.2",
                 ".NET Core",
                 ".NET 8",
+                ".NET 10",
                 "FastAPI",
                 "Flask"
             ],
@@ -389,6 +390,7 @@
     "Interests-off": [],
     "Availability-off": "",
     "NoticePeriod": "2 Months",
+    "Availability": "Exploring Opportunities",
     "ExpectedSalary-off": "",
     "Declaration-off": ""
 }

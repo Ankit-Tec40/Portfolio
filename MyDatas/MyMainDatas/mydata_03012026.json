@@ -20,7 +20,7 @@
         "Codeforces-off": "",
         "Twitter-off": ""
     },
-    "Summary": "Backend Engineer with 3+ years of experience building and modernizing large-scale flight booking systems using .NET and Python. Strong expertise in designing asynchronous REST APIs, integrating 60+ third-party airline providers, and migrating legacy WCF platforms to modern .NET 8 services. Experienced in SQL Server and MongoDB, internal tooling, scheduler services, and Linux-based deployments. Proven ability to work on high-traffic, business-critical systems with a focus on performance, scalability, and reliability.",
+    "Summary": "Backend Engineer with 3+ years of experience building and modernizing large-scale flight booking systems using .NET and Python. Strong expertise in designing asynchronous REST APIs, working across integrations for multiple third-party airline providers, and migrating legacy WCF platforms to modern .NET 8 services. Experienced in SQL Server and MongoDB, internal tooling, scheduler services, and Linux-based deployments. Proven ability to work on high-traffic, business-critical systems with a focus on performance, scalability, and reliability.",
     "Education": [
         {
             "Degree": "Bachelor of Technology",
@@ -245,7 +245,6 @@
             ],
             "Role": "Solo developer",
             "Highlights": [
-                "Utilized Android's `SurfaceView` for smooth rendering",
                 "Included always-on display mode for night use",
                 "Published during college as a practical utility"
             ]
@@ -282,98 +281,136 @@
         }
     ],
     "Skills": {
-        "PrimarySkills": {
-            "Languages": [
-                "C#",
-                "Python",
-                "SQL",
-                "JavaScript",
-                "HTML",
-                "CSS"
-            ],
-            "Backend & APIs": [
-                "RESTful API Design",
-                "Async / Await Programming",
-                "WCF to REST Migration",
-                "JWT Authentication & Authorization",
-                "API Versioning",
-                "Third-Party API Integration",
-                "High-Traffic API Development"
-            ],
-            "Frameworks": [
-                ".NET Framework 4.7.2",
-                ".NET Core",
-                ".NET 8",
-                ".NET 10",
-                "FastAPI",
-                "Flask"
-            ],
-            "Databases": [
-                "SQL Server (Query Optimization, Indexing)",
-                "MongoDB (Schema Design, Aggregations)"
-            ],
-            "Architecture & Design": [
-                "Monolithic Architecture",
-                "Config-Driven Microservices",
-                "Layered Architecture",
-                "System Design",
-                "Asynchronous Systems",
-                "Backward Compatibility Design"
-            ],
-            "Performance & Reliability": [
-                "CPU & Thread Optimization",
-                "Non-Blocking I/O",
-                "Error Handling & Resilience",
-                "Incremental Migration Strategies"
-            ],
-            "Tools & Platforms": [
-                "Git",
-                "GitHub",
-                "Visual Studio",
-                "VS Code",
-                "Postman",
-                "Kestrel",
-                "Linux & Windows Hosting",
-                "Console Applications",
-                "Background Scheduler Services"
-            ],
-            "Automation & Internal Tooling": [
-                "Scheduler Services",
-                "Internal Developer Tools",
-                "Workflow Automation",
-                "API Testing Platforms"
-            ]
-        },
-        "FamiliarWith": {
-            "Languages": [
-                "Java",
-                "C",
-                "C++",
-                "Kotlin"
-            ],
-            "Frameworks & SDKs": [
-                "AngularJS",
-                "Android SDK"
-            ],
-            "AI / ML (Academic Background)": [
-                "Machine Learning (Major – College Curriculum)",
-                "Artificial Intelligence Fundamentals",
-                "Supervised & Unsupervised Learning",
-                "Model Evaluation & Validation Concepts",
-                "Data Preprocessing & Feature Engineering (Basic)",
-                "Scikit-learn (Academic / Practice Level)",
-                "Probability & Statistics for ML (Basic)"
-            ],
-            "Examinations & Academic Exposure": [
-                "GATE – Data Science & Artificial Intelligence (Appeared Twice)",
-                "Strong academic performance in ML-related subjects"
-            ],
-            "Developer Productivity & Research Tools": [
-                "Jupyter Notebook",
-                "Exploratory Data Analysis (Academic)",
-                "AI-Assisted Development (ChatGPT)"
-            ]
-        }
+        "PrimarySkills": [
+            {
+                "Category": "Languages",
+                "Items": [
+                    "C#",
+                    "Python",
+                    "SQL",
+                    "JavaScript",
+                    "HTML",
+                    "CSS"
+                ]
+            },
+            {
+                "Category": "Backend & APIs",
+                "Items": [
+                    "RESTful API Design",
+                    "Async / Await Programming",
+                    "WCF to REST Migration",
+                    "JWT Authentication & Authorization",
+                    "API Versioning",
+                    "Third-Party API Integration",
+                    "High-Traffic API Development"
+                ]
+            },
+            {
+                "Category": "Frameworks",
+                "Items": [
+                    ".NET Framework 4.7.2",
+                    ".NET Core",
+                    ".NET 8",
+                    "FastAPI",
+                    "Flask"
+                ]
+            },
+            {
+                "Category": "Databases",
+                "Items": [
+                    "SQL Server (Query Optimization, Indexing)",
+                    "MongoDB (Schema Design, Aggregations)"
+                ]
+            },
+            {
+                "Category": "Architecture & Design",
+                "Items": [
+                    "Monolithic Architecture",
+                    "Config-Driven Microservices",
+                    "Layered Architecture",
+                    "System Design",
+                    "Asynchronous Systems",
+                    "Backward Compatibility Design"
+                ]
+            },
+            {
+                "Category": "Performance & Reliability",
+                "Items": [
+                    "CPU & Thread Optimization",
+                    "Non-Blocking I/O",
+                    "Error Handling & Resilience",
+                    "Incremental Migration Strategies"
+                ]
+            },
+            {
+                "Category": "Tools & Platforms",
+                "Items": [
+                    "Git",
+                    "GitHub",
+                    "Visual Studio",
+                    "VS Code",
+                    "Postman",
+                    "Kestrel",
+                    "Linux & Windows Hosting",
+                    "Console Applications",
+                    "Background Scheduler Services"
+                ]
+            },
+            {
+                "Category": "Automation & Internal Tooling",
+                "Items": [
+                    "Scheduler Services",
+                    "Internal Developer Tools",
+                    "Workflow Automation",
+                    "API Testing Platforms"
+                ]
+            }
+        ],
+        "FamiliarWith": [
+            {
+                "Category": "Languages",
+                "Items": [
+                    "Java",
+                    "C",
+                    "C++",
+                    "Kotlin"
+                ]
+            },
+            {
+                "Category": "Frameworks & SDKs",
+                "Items": [
+                    "AngularJS",
+                    "Android SDK"
+                ]
+            },
+            {
+                "Category": "AI / ML (Academic Background)",
+                "Items": [
+                    "Machine Learning (College Major)",
+                    "Artificial Intelligence Fundamentals",
+                    "Supervised & Unsupervised Learning",
+                    "Model Evaluation & Validation Concepts",
+                    "Data Preprocessing & Feature Engineering (Basic)",
+                    "Scikit-learn (Academic / Practice Level)",
+                    "Probability & Statistics for ML (Basic)"
+                ]
+            },
+            {
+                "Category": "Academic Exposure",
+                "Items": [
+                    "GATE – Data Science & Artificial Intelligence (Appeared Twice)",
+                    "Strong academic performance in ML-related subjects"
+                ]
+            },
+            {
+                "Category": "Developer Productivity & Tools",
+                "Items": [
+                    "Jupyter Notebook",
+                    "Exploratory Data Analysis (Academic)",
+                    "AI-Assisted Development (ChatGPT)"
+                ]
+            }
+        ]
     },
     "Achievements-off": [
         {
@@ -388,7 +425,6 @@
         "Bhojpuri"
     ],
     "Interests-off": [],
-    "Availability-off": "",
     "NoticePeriod": "2 Months",
     "Availability": "Open to Opportunities",
     "ExpectedSalary-off": "",
