@@ -1,72 +1,336 @@
 {
-  "PersonalInfos": {
-    "Name": "Ankit Kumar",
-    "PhonNo": "xxxxxxxxx",
-    "Gmail": "ankit@gmail.com",
-    "HomeTown": "Bihar",
-    "CurrentLocation": "Noida",
-    "Gender": "Male"
-  },
-  "Summary": "Software Developer experienced in .NET Core and Python, specializing in scalable backend systems, API integrations, and internal tools. Skilled in C#, Flask, MongoDB, and async programming with a strong foundation in DSA and system design.",
-  "Education": [
-    {
-      "Degree": "B.Tech",
-      "Branch": "Computer Science",
-      "College": "Lovely Professional University",
-      "University": "LPU",
-      "StartYear": "2019",
-      "EndYear": "2023",
-      "CGPA": "8.3"
-    }
-  ],
-  "WorkExperience": [
-    {
-      "CompanyName": "EaseMyTrip",
-      "Role": "Software Developer",
-      "StartDate": "Sept-2023",
-      "EndDate": "Current",
-      "Location": "Noida",
-      "TechUsed": [
-        "C#", ".NET Core", "SQL Server", "MongoDB", "REST API", "Python", "Flask", "AngularJS"
-      ],
-      "Responsibilities": [
-        "Built scalable backend APIs and automation tools for flight operations.",
-        "Integrated third-party airline APIs and improved performance with async processing.",
-        "Developed internal testing tools, schedulers, and productivity utilities."
-      ],
-      "Projects": [
-        {
-          "ProjectName": "Flight Booking API",
-          "Description": "Integrated with Travelport, Sabre, Indigo & others using async patterns and optimized caching by 40%.",
-          "TechUsed": [".NET Core", "C#", "SQL Server"]
-        },
-        {
-          "ProjectName": "Flight APIs Testing Tool",
-          "Description": "Full-stack tool using Flask + AngularJS to test API flows with JWT login and MongoDB.",
-          "TechUsed": ["Python", "Flask", "AngularJS"]
-        },
-        {
-          "ProjectName": "Scheduler Services",
-          "Description": "Live .NET background service automating reports, fraud checks, WhatsApp alerts.",
-          "TechUsed": [".NET Core", "Timer", "SQL Server"]
-        }
-      ]
-    }
-  ],
-  "Skills": {
-    "PrimarySkills": {
-      "Languages": ["C#", "Python", "SQL"],
-      "Frameworks": [".NET Core", "Flask"],
-      "WebDevelopment": ["REST API", "JWT", "AngularJS"],
-      "Databases": ["SQL Server", "MongoDB"],
-      "Tools": ["Git", "Postman", "Console Apps"],
-      "OtherSkills": ["Backend Dev", "Async Programming", "Automation"]
+    "PersonalInfos": {
+        "Name": "Ankit Kumar",
+        "PhoneNumber": "6201152962",
+        "Gmail": "ankit.tec40@gmail.com",
+        "HomeTown": "Bihar",
+        "CurrentLocation": "Noida",
+        "DateOfBirth-off": "",
+        "Gender": "Male",
+        "Heading":"Backend Developer | .NET | Python | SQL | REST APIs"
     },
-    "FamiliarWith": {
-      "Languages": ["C", "C++", "Java", "Kotlin"],
-      "Topics": ["ML", "AI"]
-    }
-  },
-  "LanguagesKnown": ["English", "Hindi", "Bhojpuri"],
-  "NoticePeriod": "3 Months"
+    "Profiles": {
+        "LinkedIn": "https://www.linkedin.com/in/ankit991999",
+        "GitHub": "https://github.com/Ankit-Tec40",
+        "Portfolio": "https://ankit-tec40.github.io/Portfolio",
+        "LeetCode-off": "",
+        "HackerRank-off": "",
+        "Codeforces-off": "",
+        "Twitter-off": ""
+    },
+    "Summary": "Detail-oriented and versatile Software Developer with experience in backend development using .NET (Framework & Core) and Python. Skilled in building RESTful APIs, automating workflows, and working with both SQL and NoSQL databases including MongoDB. Strong foundation in data structures, object-oriented programming, and clean code practices. Hands-on experience with database design and basic frontend integration. Passionate about building practical tools and continuously learning new technologies. Looking for an impactful backend role where I can solve real-world problems, contribute to scalable systems, and grow as a developer.",
+    "Education": [
+        {
+            "Degree": "Bachelor of Technology",
+            "Branch": "Computer Science and Engineering",
+            "College": "Lovely Professional University",
+            "University": "Lovely Professional University",
+            "StartYear": "2019",
+            "EndYear": "2023",
+            "CGPA": "8.3"
+        }
+    ],
+    "Certifications": [
+        {
+            "Title": "Full Stack Development Using Java",
+            "Issuer": "ChieperSchool",
+            "IssueDate": "Jul 2022",
+            "CredentialURL": "",
+            "Skills": [
+                "Java",
+                "Spring Boot"
+            ]
+        },
+        {
+            "Title": "Data Structures and Algorithms in Java",
+            "Issuer": "GeeksForGeeks",
+            "IssueDate": "Jul 2022",
+            "CredentialURL": "",
+            "Skills": [
+                "Java",
+                "Data Structures",
+                "Algorithms",
+                "Problem Solving"
+            ]
+        },
+        {
+            "Title": "Internship - Full Stack Development",
+            "Issuer": "HighRadius",
+            "IssueDate": "Jun 2022",
+            "CredentialURL": "",
+            "Skills": [
+                "Java",
+                "Python",
+                "React",
+                "Flask",
+                "Machine Learning"
+            ]
+        },
+        {
+            "Title": "Foundation of Artificial Intelligence",
+            "Issuer": "Skill-UP",
+            "IssueDate": "May 2021",
+            "CredentialURL": "",
+            "Skills": [
+                "Machine Learning",
+                "Artificial Intelligence",
+                "Python",
+                "Pandas",
+                "NumPy",
+                "Data Preprocessing",
+                "Supervised Learning",
+                "Unsupervised Learning",
+                "Model Evaluation",
+                "Scikit-learn"
+            ]
+        },
+        {
+            "Title": "Data Structures and Algorithms Using Python",
+            "Issuer": "NPTEL",
+            "IssueDate": "Apr 2021",
+            "CredentialURL": "",
+            "Skills": [
+                "Python",
+                "Data Structures",
+                "Algorithms",
+                "Problem Solving"
+            ]
+        }
+    ],
+    "WorkExperience": [
+        {
+            "CompanyName": "EaseMyTrip",
+            "Role": "Software Developer",
+            "StartDate": "Sept-2023",
+            "EndDate": "Ongoing",
+            "Location": "Noida",
+            "TechUsed": [
+                "C#",
+                ".NET",
+                ".NET Core",
+                "SQL Server",
+                "MongoDB",
+                "REST API",
+                "Web Services",
+                "Python",
+                "Flask",
+                "AngularJS",
+                "HTML",
+                "CSS",
+                "JWT",
+                "Console Apps"
+            ],
+            "Skills": [
+                "Backend Development",
+                "API Integration",
+                "Database Management",
+                "System Optimization",
+                "Async Programming",
+                "Automation",
+                "Internal Tooling",
+                "Scheduling Services"
+            ],
+            "Responsibilities": [
+                "Developed and maintained scalable, production-grade backend systems for flight operations using .NET and Python.",
+                "Integrated multiple third-party airline APIs to enable live booking, fare search, and ticketing functionalities.",
+                "Built internal tools and microservices to automate repetitive tasks and streamline operational workflows.",
+                "Optimized SQL and NoSQL database queries and cache usage to enhance system performance and response times.",
+                "Designed and deployed scheduler services for automated monitoring, alerting, and report generation.",
+                "Identified, diagnosed, and resolved production bugs and user-reported issues to ensure system stability and customer satisfaction."
+            ],
+            "Projects": [
+                {
+                    "ProjectName": "Flight Booking API",
+                    "Description": "Built and maintained flight booking services that interacted with third-party airline APIs such as Travelport, Sabre, Indigo, Akasa, Air India Express, Flycreative, Vicky, Lords Travels, Travelopedia, PKfare, and various NDCs. Collaborated on API-related tasks including debugging, feature enhancement, and ensuring smooth integration flows. Implemented asynchronous patterns to improve responsiveness and optimized caching logic, reducing memory usage by 40%.",
+                    "TechUsed": [
+                        ".NET Core",
+                        "C#",
+                        "SQL Server",
+                        "MongoDB",
+                        "REST API"
+                    ],
+                    "Role": "Backend developer responsible for core API logic, external integrations, performance tuning, and ensuring production stability.",
+                    "Outcome": "Improved API responsiveness and reduced booking latency by 30%, resulting in smoother user experience and fewer API timeouts."
+                },
+                {
+                    "ProjectName": "Flight APIs Testing System",
+                    "Description": "Developed a secure internal tool for testing flight-related APIs such as search, reprice, more fares, booking, SSRs (seat selection), and rescheduling. Implemented JWT-based authentication and built a user-friendly web interface using AngularJS, with a Flask backend connected to MongoDB. Enabled testing and monitoring of API performance and responses across all active users, agents, partners, and countries where the services are deployed.",
+                    "TechUsed": [
+                        "Python",
+                        "Flask",
+                        "MongoDB",
+                        "AngularJS",
+                        "HTML",
+                        "CSS",
+                        "JWT"
+                    ],
+                    "Role": "Full-stack developer responsible for backend and frontend development, API communication, and internal deployment.",
+                    "Outcome": "Reduced QA testing time by over 90% and improved response accuracy tracking across multiple airline partners."
+                },
+                {
+                    "ProjectName": "Scheduler Services",
+                    "Description": "Created background scheduler services using .NET Core and `Timer` to automate critical tasks like updating booking purchases, currency rates, and airline sectors. Included fraud detection alerts, daily booking reports, and API health monitoring with WhatsApp alerts. Fully deployed and running in production.",
+                    "TechUsed": [
+                        ".NET Core",
+                        "C#",
+                        "Timer",
+                        "SQL Server",
+                        "ScottyPlot"
+                    ],
+                    "Role": "Solo developer responsible for full-cycle development, scheduling logic, and deployment of automated backend services.",
+                    "Outcome": "Eliminated manual operations, saved ~4 hours of daily team effort, and enabled real-time fraud alerts and currency sync."
+                },
+                {
+                    "ProjectName": "Internal Console Tools Suite",
+                    "Description": "Developed multiple in-house console applications to boost team productivity and automate manual tasks. Tools included:\n• JSON Request Builder – generates structured payloads for C# APIs\n• 20-20-20 Eye Reminder – reduces screen strain\n• Daily Task Tracker – logs work activities\n• Auto Git Pusher – automates daily commits\n• New Sector Merger – integrates airline sectors in real time.",
+                    "TechUsed": [
+                        "C#",
+                        ".NET Core",
+                        "Python",
+                        "Git",
+                        "Console App"
+                    ],
+                    "Role": "Independently designed and built all tools at EaseMyTrip, focusing on developer experience, internal efficiency, and workflow automation.",
+                    "Outcome": "Streamlined daily developer operations, reduced repetitive task load, and encouraged healthy coding habits among team members."
+                }
+            ]
+        }
+    ],
+    "Projects": [
+        {
+            "ProjectName": "Full Screen Clock – Android App",
+            "Description": "Designed a full-screen digital clock app for tablets and mobile devices. Used for visibility during study sessions, desk timers, and digital wall clocks. Supports 12/24-hour format with custom fonts and themes.",
+            "GitHubURL": "",
+            "LiveDemoURL": "",
+            "TechUsed": [
+                "Java",
+                "Android SDK"
+            ],
+            "Role": "Solo developer",
+            "Highlights": [
+                "Utilized Android's `SurfaceView` for smooth rendering",
+                "Included always-on display mode for night use",
+                "Published during college as a practical utility"
+            ]
+        },
+        {
+            "ProjectName": "Math Tables Learner – Android App",
+            "Description": "Built an interactive math tables app to help kids learn and practice multiplication tables. Includes audio-based teaching, flashcard mode, and a quiz/test module with scoring.",
+            "GitHubURL": "",
+            "LiveDemoURL": "",
+            "TechUsed": [
+                "Java",
+                "Android SDK"
+            ],
+            "Role": "Solo developer",
+            "Highlights": [
+                "Supports tables up to 99",
+                "Audio-enabled teaching mode",
+                "Gamified test mode with score tracking"
+            ]
+        },
+        {
+            "ProjectName": "Maths Practice App – Calculations",
+            "Description": "Created an app to help users practice fast mental math: addition, subtraction, multiplication, and division. Used for improving speed and accuracy, with difficulty scaling and timed test challenges.",
+            "GitHubURL": "",
+            "LiveDemoURL": "",
+            "TechUsed": [
+                "Java",
+                "Android SDK"
+            ],
+            "Role": "Solo developer",
+            "Highlights": [
+                "Designed adaptive test modes (easy to expert)"
+            ]
+        }
+    ],
+    "Skills": {
+        "PrimarySkills": {
+            "Languages": [
+                "C#",
+                "Python",
+                "SQL",
+                "JavaScript",
+                "HTML",
+                "CSS"
+            ],
+            "WebDevelopment": [
+                "REST API",
+                "Flask",
+                "AngularJS",
+                "JWT Authentication",
+                "Web Services"
+            ],
+            "Databases": [
+                "SQL Server",
+                "MongoDB"
+            ],
+            "Frameworks": [
+                ".NET Core",
+                ".NET Framework"
+            ],
+            "CloudPlatforms-off": [
+                "Azure (Basic Usage)"
+            ],
+            "Tools": [
+                "Git",
+                "GitHub",
+                "Visual Studio",
+                "VS Code",
+                "Postman",
+                "Console Apps",
+                "Timers in .NET",
+                "WhatsApp API",
+                "Email API"
+            ],
+            "OtherSkills": [
+                "Backend Development",
+                "API Integration",
+                "System Design",
+                "Asynchronous Programming",
+                "Automation",
+                "Performance Optimization",
+                "Scheduling Services",
+                "Internal Tooling",
+                "Problem Solving",
+                "Object-Oriented Programming"
+            ]
+        },
+        "FamiliarWith": {
+            "Languages": [
+                "C",
+                "C++",
+                "Java",
+                "Kotlin"
+            ],
+            "Frameworks": [
+                "Android SDK"
+            ],
+            "Topics": [
+                "Machine Learning",
+                "Artificial Intelligence"
+            ],
+            "Other": [
+                "Android App Development (Academic Projects)",
+                "Jupyter Notebook"
+            ]
+        }
+    },
+    "Achievements-off": [
+        {
+            "Title": "",
+            "Description": "",
+            "Year": ""
+        }
+    ],
+    "LanguagesKnown": [
+        "English",
+        "Hindi",
+        "Bhojpuri"
+    ],
+    "Interests-off": [],
+    "Availability-off": "",
+    "NoticePeriod": "3 Months",
+    "ExpectedSalary-off": "",
+    "Declaration-off": ""
 }

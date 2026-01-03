@@ -1,0 +1,95 @@
+{
+  "PersonalInfos": {
+    "Name": "Ankit Kumar",
+    "PhoneNumber": "62*******",
+    "Gmail": "ankit@gmail.com",
+    "HomeTown": "Bihar",
+    "CurrentLocation": "Noida",
+    "Gender": "Male",
+    "Heading": "Backend Developer | .NET | Python | SQL | REST APIs",
+    "StartDate": "Sept-2022",
+    "YearsOfExperience": "3"
+  },
+  "Profiles": {
+    "LinkedIn": "https://www.linkedin.com/in/ankit991999",
+    "GitHub": "https://github.com/Ankit-Tec40",
+    "Portfolio": "https://ankit-tec40.github.io/Portfolio"
+  },
+  "Summary": "Backend Developer with 3 years of experience in .NET, Python, and RESTful APIs. Skilled in database optimization, automation, and system design. Proficient with SQL Server, MongoDB, and Flask. Strong foundation in DSA, OOP, and clean code.",
+  "Education": [
+    {
+      "Degree": "B.Tech - CSE",
+      "College": "Lovely Professional University",
+      "StartYear": "2019",
+      "EndYear": "2023",
+      "CGPA": "8.3"
+    }
+  ],
+  "Certifications": [
+    { "Title": "Full Stack Java", "Issuer": "ChieperSchool", "IssueDate": "Jul 2022" },
+    { "Title": "DSA in Java", "Issuer": "GeeksForGeeks", "IssueDate": "Jul 2022" },
+    { "Title": "Internship", "Issuer": "HighRadius", "IssueDate": "Jun 2022" },
+    { "Title": "Foundation of AI", "Issuer": "Skill-UP", "IssueDate": "May 2021" },
+    { "Title": "DSA Using Python", "Issuer": "NPTEL", "IssueDate": "Apr 2021" }
+  ],
+  "WorkExperience": [
+    {
+      "CompanyName": "EaseMyTrip",
+      "Role": "Software Developer",
+      "StartDate": "Sept-2022",
+      "EndDate": "Ongoing",
+      "Location": "Noida",
+      "TechUsed": [
+        "C#",
+        ".NET Core",
+        "Python",
+        "SQL Server",
+        "MongoDB",
+        "Flask",
+        "REST API",
+        "AngularJS",
+        "JWT"
+      ],
+      "Responsibilities": [
+        "Built backend systems for flight operations.",
+        "Integrated APIs for booking and ticketing.",
+        "Automated tasks using schedulers and tools.",
+        "Optimized DB queries and performance.",
+        "Resolved production issues."
+      ],
+      "Projects": [
+        {
+          "ProjectName": "Flight Booking API",
+          "Description": "Integrated airline APIs and caching; reduced latency by 30%.",
+          "TechUsed": [".NET Core", "C#", "MongoDB"],
+          "Outcome": "Improved stability and reduced memory by 40%."
+        },
+        {
+          "ProjectName": "APIs Testing Tool",
+          "Description": "Flask + AngularJS tool with JWT for secure testing.",
+          "Outcome": "Cut QA time by 90%."
+        },
+        {
+          "ProjectName": "Schedulers",
+          "Description": "Automated booking, FX, and fraud alerts.",
+          "Outcome": "Saved 4+ hours/day."
+        },
+        {
+          "ProjectName": "Internal Tools",
+          "Description": "JSON builder, task tracker, eye-care tool.",
+          "Outcome": "Boosted dev productivity."
+        }
+      ]
+    }
+  ],
+  "Skills": {
+    "Languages": ["C#", "Python", "SQL", "JavaScript"],
+    "Web": ["REST APIs", "Flask", "AngularJS", "JWT"],
+    "Databases": ["SQL Server", "MongoDB"],
+    "Frameworks": [".NET Core", ".NET Framework"],
+    "Tools": ["Git", "GitHub", "VS Code", "Postman"],
+    "Other": ["System Design", "OOP", "Problem Solving"]
+  },
+  "LanguagesKnown": ["English", "Hindi", "Bhojpuri"],
+  "NoticePeriod": "3 Months"
+}

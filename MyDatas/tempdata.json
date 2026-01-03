@@ -1,13 +1,15 @@
 {
     "PersonalInfos": {
         "Name": "Ankit Kumar",
-        "PhoneNumber": "6201152962",
-        "Gmail": "ankit.tec40@gmail.com",
+        "PhoneNumber": "62******62",
+        "Gmail": "ankit@gmail.com",
         "HomeTown": "Bihar",
         "CurrentLocation": "Noida",
         "DateOfBirth-off": "",
         "Gender": "Male",
-        "Heading":"Backend Developer | .NET | Python | SQL | REST APIs"
+        "Heading": "Backend Developer | .NET | Python | SQL | REST APIs",
+        "StartDate": "Sept-2022",
+        "YearsOfExperience": "3"
     },
     "Profiles": {
         "LinkedIn": "https://www.linkedin.com/in/ankit991999",

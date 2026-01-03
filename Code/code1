@@ -1,0 +1,106 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages
+\usepackage[
+    ignoreheadfoot,
+    top=1.5 cm,
+    bottom=1.5 cm,
+    left=1.5 cm,
+    right=1.5 cm
+]{geometry}
+\usepackage{titlesec}
+\usepackage{paracol}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{charter}
+
+% Settings
+\raggedright
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{0.2cm}
+\pagenumbering{gobble}
+\titleformat{\section}{\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{0pt}{0.3cm}{0.2cm}
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+\begin{document}
+
+% ---------- HEADER ----------
+\begin{center}
+    {\fontsize{20pt}{20pt}\selectfont \textbf{Ankit Kumar}} \\[6pt]
+    ankit.tec40@gmail.com \textbar{}
+    +91-6201152962 \textbar{}
+    Noida, India \\[4pt]
+    \href{https://www.linkedin.com/in/ankit991999}{linkedin.com/in/ankit991999} \textbar{}
+    \href{https://github.com/Ankit-Tec40}{github.com/Ankit-Tec40} \textbar{}
+    \href{https://ankit-tec40.github.io/Portfolio}{https://ankit-tec40.github.io/Portfolio}
+\end{center}
+
+\vspace{0.3cm}
+
+
+% ---------- SUMMARY ----------
+\section{Summary}
+Detail-oriented and versatile \textbf{Backend Developer} with experience in \textbf{.NET (Framework \& Core)} and \textbf{Python}. Skilled in building REST APIs, automating workflows, and working with SQL \& NoSQL databases. Strong foundation in OOP, data structures, and clean code practices. Hands-on with database design, scheduler services, and basic frontend integration. Passionate about scalable systems and solving real-world problems.
+
+% ---------- EXPERIENCE ----------
+\section{Experience}
+\textbf{Software Developer} \hfill EaseMyTrip, Noida \\
+\textit{Sept 2022 – Present}
+\begin{itemize}[leftmargin=*]
+    \item Developed scalable backend systems for flight operations using \textbf{.NET Core, C\#, Python, SQL Server, MongoDB}.
+    \item Integrated many third-party airline APIs (Travelport, Sabre, Sabre NDC, PKFare, FlyCreative, etc.).
+    \item Built \textbf{scheduler services} for automated fraud detection alerts, booking reports, and currency sync.
+    \item Developed self-use productivity tools (JSON Request Builder, Auto Git Pusher, Task Tracker, Eye Reminder). .
+    \item Optimized queries and caching logic, reducing latency by 30\% and memory usage by 40\%.
+\end{itemize}
+
+\textbf{Key Projects:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Flight Booking API:} Integrated major airline APIs, optimized responsiveness, cut booking latency by 30\%.
+    \item \textbf{Flight API Testing Tool:} Flask + AngularJS platform with JWT auth; reduced QA time by 90\%.
+    \item \textbf{Scheduler Services:} Automated jobs with .NET Core timers; enabled fraud alerts \& daily reports.
+    \item \textbf{Internal Console Tools:} Designed multiple productivity tools for developers, automating repetitive tasks.
+\end{itemize}
+
+% ---------- EDUCATION ----------
+\section{Education}
+\textbf{B.Tech, Computer Science and Engineering} \hfill Lovely Professional University \\
+2019 – 2023 \hfill CGPA: 8.3
+
+% ---------- CERTIFICATIONS ----------
+\section{Certifications}
+\begin{itemize}[leftmargin=*]
+    \item Full Stack Development Using Java – ChieperSchool (2022)
+    \item Data Structures \& Algorithms in Java – GeeksForGeeks (2022)
+    \item Internship: Full Stack Development – HighRadius (2022)
+    \item Foundations of Artificial Intelligence – Skill-UP (2021)
+    \item Data Structures \& Algorithms Using Python – NPTEL (2021)
+\end{itemize}
+
+
+% ---------- SKILLS ----------
+\section{Skills}
+\textbf{Languages:} C\#, Python, SQL, JavaScript, HTML, CSS \\
+\textbf{Frameworks:} .NET (Core \& Framework), Flask, AngularJS \\
+\textbf{Databases:} SQL Server, MongoDB \\
+\textbf{Data/ML:} Machine Learning (ML), Artificial Intelligence (AI), Data Analysis \& Visualization, 
+Python (\textit{Pandas, NumPy, Scikit-learn}) \\
+\textbf{Other:} Backend Development, API Integration, Async Programming, Automation, System Design, 
+Microservices, Git, Agile/Scrum \\
+\textbf{Academic:} Self-study and GATE (Data Science/AI) preparation – strong theoretical foundation
+
+
+
+
+% ---------- LANGUAGES ----------
+\section{Languages}
+English (Fluent), Hindi (Fluent)
+
+\end{document}
