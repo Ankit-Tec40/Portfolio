@@ -102,7 +102,7 @@
     "WorkExperience": [
         {
             "CompanyName": "EaseMyTrip",
-            "Role": "Software Developer (Backend / Platform)",
+            "Role": "Software Developer",
             "StartDate": "Sept-2022",
             "EndDate": "Present",
             "Location": "Noida, India",
@@ -253,6 +253,23 @@
         }
     ],
     "PersonalProjects": [
+        {
+            "ProjectName": "TecWecTools",
+            "Description": "A suite of utilitarian web tools designed using FastAPI (backend) and AngularJS (frontend).",
+            "GitHubURL": "https://tecwectools.vercel.app/",
+            "LiveDemoURL": "https://tecwectools.vercel.app/",
+            "TechUsed": [
+                "FastAPI",
+                "AngularJS",
+                "Python",
+                "Vercel"
+            ],
+            "Role": "Solo developer",
+            "Highlights": [
+                "Designed and deployed a full-stack web application",
+                "Implemented responsive UI with AngularJS"
+            ]
+        },
         {
             "ProjectName": "Full Screen Clock – Android App",
             "Description": "Designed a full-screen digital clock app for tablets and mobile devices. Used for visibility during study sessions, desk timers, and digital wall clocks. Supports 12/24-hour format with custom fonts and themes.",
@@ -445,7 +462,7 @@
     ],
     "Interests-off": [],
     "Availability-off": "",
-    "NoticePeriod-off": "2 Months",
+    "NoticePeriod": "2 Months",
     "Availability": "Exploring Opportunities",
     "ExpectedSalary-off": "",
     "Declaration-off": ""

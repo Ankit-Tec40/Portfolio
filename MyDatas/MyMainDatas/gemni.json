@@ -1,0 +1,117 @@
+{
+  "PersonalInfos": {
+    "Name": "Ankit Kumar",
+    "PhoneNumber": "0000000000",
+    "Gmail": "ankit@gmail.com",
+    "HomeTown": "Bihar",
+    "CurrentLocation": "Noida",
+    "Gender": "Male",
+    "Heading": "Senior Backend Developer | .NET 8 | System Architect | GDS Specialist",
+    "StartDate": "Sept-2022",
+    "YearsOfExperience": "3.3",
+    "NoticePeriod": "2 Months",
+    "Availability": "Exploring Opportunities"
+  },
+  "Profiles": {
+    "LinkedIn": "https://www.linkedin.com/in/ankit991999",
+    "GitHub": "https://github.com/Ankit-Tec40",
+    "Portfolio": "https://ankit-tec40.github.io/Portfolio"
+  },
+  "Summary": "Backend Engineer with 3.3 years of experience. Proactively designed and implemented a next-generation .NET 8 platform architecture at EaseMyTrip, adopted as the enterprise standard. Expert in complex GDS integrations (Sabre) and legacy modernization (WCF to REST). Proven ability to deliver senior-level architectural solutions for 60+ airline providers using high-concurrency and asynchronous systems.",
+  "Education": [
+    {
+      "Degree": "Bachelor of Technology",
+      "Branch": "Computer Science and Engineering (Spec. in AI/ML)",
+      "College": "Lovely Professional University",
+      "University": "Lovely Professional University",
+      "StartYear": "2019",
+      "EndYear": "2023",
+      "CGPA": "8.3",
+      "Note": "Completed final year degree requirements while working full-time as a Graduate Trainee at EaseMyTrip."
+    }
+  ],
+  "WorkExperience": [
+    {
+      "CompanyName": "EaseMyTrip",
+      "Role": "Software Developer (Backend / Platform)",
+      "StartDate": "Sept-2022",
+      "EndDate": "Present",
+      "Location": "Noida, India",
+      "TechUsed": [
+        ".NET 8", ".NET Core", ".NET Framework 4.7.2", "C#", "SQL Server (Native Stored Procedures)", 
+        "MongoDB (Class-based)", "REST APIs", "WCF (SOAP)", "Python", "Flask", "FastAPI", 
+        "AngularJS", "JWT", "Kestrel", "Kubernetes", "Linux", "Redis/Memcached", 
+        "Newtonsoft.Json", "XmlDocument", "Git"
+      ],
+      "Responsibilities": [
+        "Progression: Graduate Trainee (Sept '22 - June '23) | Software Developer (July '23 - Present).",
+        "Proactively designed the new system architecture for the .NET 8 flight booking platform (accepted as enterprise standard).",
+        "Led the migration of 60+ airline provider integrations from legacy WCF to modern .NET 8 REST APIs.",
+        "Engineered the Sabre GDS integration as a trainee, which has remained stable in production for 3+ years.",
+        "Implemented a config-driven design allowing the codebase to run as a Monolith or Microservices.",
+        "Designed high-performance manual XML/JSON parsing engines using XmlDocument and Newtonsoft.",
+        "Reduced server costs and optimized performance by refactoring blocking code into fully asynchronous I/O.",
+        "Developed an internal API testing platform that reduced manual QA effort by 90%."
+      ],
+      "Projects": [
+        {
+          "ProjectName": "Next-Generation Flight Booking Backend Platform",
+          "Tech": [".NET 8", "C#", "SQL Server", "MongoDB", "Kubernetes"],
+          "Description": "Architected a new system with a fresh schema to replace legacy infrastructure for 60+ providers."
+        },
+        {
+          "ProjectName": "Sabre GDS Integration",
+          "Tech": ["C#", "SOAP", "XML", "XmlDocument", "Newtonsoft.Json"],
+          "Description": "End-to-end integration of Sabre SWS for Search, Reprice, Booking, and Ticketing."
+        },
+        {
+          "ProjectName": "WCF to .NET 8 Platform Migration",
+          "Tech": [".NET 8", "WCF", "Kestrel", "Linux"],
+          "Description": "Modernized legacy Windows services to cross-platform .NET 8 while maintaining parallel production stability."
+        },
+        {
+          "ProjectName": "Flight API Testing System",
+          "Tech": ["FastAPI", "MongoDB", "AngularJS"],
+          "Description": "Automated tool to validate provider responses and reduce manual testing cycles."
+        },
+        {
+          "ProjectName": "Scheduler Services & Automation",
+          "Tech": ["C#", ".NET Core", "SQL Server"],
+          "Description": "Services for automated fraud alerts, daily reporting, and currency synchronization."
+        }
+      ]
+    }
+  ],
+  "PersonalProjects": [
+    {
+      "ProjectName": "TecWecTools",
+      "Tech": ["FastAPI", "AngularJS", "Python", "Vercel"],
+      "URL": "https://tecwectools.vercel.app/"
+    },
+    {
+      "ProjectName": "Full Screen Clock – Android App",
+      "Tech": ["Java", "Android SDK"]
+    },
+    {
+      "ProjectName": "Math Tables Learner & Practice Apps",
+      "Tech": ["Java", "Android SDK"]
+    }
+  ],
+  "Certifications": [
+    { "Title": "Data Structures and Algorithms", "Issuer": "GeeksForGeeks", "Date": "Jul 2022" },
+    { "Title": "Data Structures and Algorithms Using Python", "Issuer": "NPTEL", "Date": "Apr 2021" },
+    { "Title": "Full Stack Development Using Java", "Issuer": "ChieperSchool", "Date": "Jul 2022" },
+    { "Title": "Foundation of Artificial Intelligence", "Issuer": "Skill-UP", "Date": "May 2021" },
+    { "Title": "Internship - Full Stack Development", "Issuer": "HighRadius", "Date": "Jun 2022" }
+  ],
+  "Skills": {
+    "TechStack": [
+      ".NET 8", "C#", "Web API", "WCF", "SQL Server", "MongoDB", "Python", "FastAPI", "AngularJS", "Kubernetes", "Redis"
+    ],
+    "Domain": [
+      "GDS Integration (Sabre)", "System Architecture", "API Design", "Legacy Migration", "Performance Tuning"
+    ],
+    "Tools": ["Git", "Postman", "IIS", "Kestrel", "Linux", "VS Code", "Visual Studio"]
+  },
+  "Languages": ["English", "Hindi", "Bhojpuri"]
+}
