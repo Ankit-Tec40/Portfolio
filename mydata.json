@@ -9,7 +9,7 @@
         "Gender": "Male",
         "Heading": "Backend Developer | .NET | Python | SQL | REST APIs",
         "StartDate": "Sept-2022",
-        "YearsOfExperience": "3"
+        "YearsOfExperience": "3+"
     },
     "Profiles": {
         "LinkedIn": "https://www.linkedin.com/in/ankit991999",
@@ -20,7 +20,7 @@
         "Codeforces-off": "",
         "Twitter-off": ""
     },
-    "Summary": "Detail-oriented and versatile Software Developer with experience in backend development using .NET (Framework & Core) and Python. Skilled in building RESTful APIs, automating workflows, and working with both SQL and NoSQL databases including MongoDB. Strong foundation in data structures, object-oriented programming, and clean code practices. Hands-on experience with database design and basic frontend integration. Passionate about building practical tools and continuously learning new technologies. Looking for an impactful backend role where I can solve real-world problems, contribute to scalable systems, and grow as a developer.",
+    "Summary": "Backend Engineer with 3+ years of experience building and modernizing large-scale flight booking systems using .NET and Python. Strong expertise in designing asynchronous REST APIs, integrating 60+ third-party airline providers, and migrating legacy WCF platforms to modern .NET 8 services. Experienced in SQL Server and MongoDB, internal tooling, scheduler services, and Linux-based deployments. Proven ability to work on high-traffic, business-critical systems with a focus on performance, scalability, and reliability.",
     "Education": [
         {
             "Degree": "Bachelor of Technology",
@@ -102,76 +102,83 @@
     "WorkExperience": [
         {
             "CompanyName": "EaseMyTrip",
-            "Role": "Software Developer",
+            "Role": "Software Developer (Backend / Platform)",
             "StartDate": "Sept-2022",
-            "EndDate": "Ongoing",
-            "Location": "Noida",
+            "EndDate": "Present",
+            "Location": "Noida, India",
             "TechUsed": [
                 "C#",
-                ".NET",
+                ".NET Framework 4.7.2",
                 ".NET Core",
+                ".NET 8",
                 "SQL Server",
                 "MongoDB",
-                "REST API",
-                "Web Services",
+                "REST APIs",
+                "WCF",
                 "Python",
                 "Flask",
+                "FastAPI",
                 "AngularJS",
-                "HTML",
-                "CSS",
                 "JWT",
-                "Console Apps"
+                "Kestrel",
+                "Linux",
+                "Windows",
+                "Timer",
+                "ScottyPlot",
+                "Git"
             ],
-            "Skills": [
-                "Backend Development",
-                "API Integration",
-                "Database Management",
-                "System Optimization",
-                "Async Programming",
-                "Automation",
-                "Internal Tooling",
-                "Scheduling Services"
-            ],
+            "Overview": "Backend developer responsible for building, integrating, modernizing, and scaling flight booking systems. Experience spans legacy WCF services, modern async REST APIs, internal tools, scheduler services, and platform migration initiatives.",
             "Responsibilities": [
                 "Developed and maintained scalable, production-grade backend systems for flight operations using .NET and Python.",
-                "Integrated multiple third-party airline APIs to enable live booking, fare search, and ticketing functionalities.",
-                "Built internal tools and microservices to automate repetitive tasks and streamline operational workflows.",
-                "Optimized SQL and NoSQL database queries and cache usage to enhance system performance and response times.",
-                "Designed and deployed scheduler services for automated monitoring, alerting, and report generation.",
-                "Identified, diagnosed, and resolved production bugs and user-reported issues to ensure system stability and customer satisfaction."
+                "Integrated and supported 60+ third-party airline APIs to enable live search, reprice, booking, ticketing, and post-booking workflows.",
+                "Built and maintained RESTful APIs and Web Services supporting high-traffic flight booking operations.",
+                "Designed and developed internal tools and services to automate repetitive operational and testing workflows.",
+                "Optimized SQL Server and MongoDB queries, caching logic, and execution paths to improve performance and reduce system load.",
+                "Identified, debugged, and resolved production issues across booking, pricing, and API integration layers.",
+                "Designed and implemented background scheduler services for automated monitoring, reporting, fraud alerts, and data synchronization.",
+                "Collaborated closely with product, QA, and engineering leadership to deliver stable and scalable backend solutions.",
+                "Architected and developed a next-generation end-to-end flight booking backend platform with full lifecycle coverage.",
+                "Implemented a fully asynchronous architecture using async/await across APIs, services, database access, and external integrations.",
+                "Introduced a config-driven architecture enabling the same codebase to run as monolithic or microservices-based deployments.",
+                "Led large-scale migration of legacy WCF (.NET Framework 4.7.2) services to modern RESTful APIs on .NET 8.",
+                "Migrated a very large codebase involving 60+ airline providers and numerous internal systems while preserving existing schemas and contracts.",
+                "Executed incremental migration (Search → Reprice → Booking → other flows), allowing old and new systems to run in parallel in production.",
+                "Resolved breaking changes during framework migration including async behavior, threading model, dependencies, and hosting.",
+                "Reduced CPU utilization by refactoring blocking code paths into non-blocking asynchronous execution flows.",
+                "Added Linux support to previously Windows-only services and enabled cross-platform hosting using Kestrel.",
+                "Worked as part of a core team responsible for backend architecture and modernization."
             ],
             "Projects": [
                 {
-                    "ProjectName": "Flight Booking API",
-                    "Description": "Built and maintained flight booking services that interacted with third-party airline APIs such as Travelport, Sabre, Indigo, Akasa, Air India Express, Flycreative, Vicky, Lords Travels, Travelopedia, PKfare, and various NDCs. Collaborated on API-related tasks including debugging, feature enhancement, and ensuring smooth integration flows. Implemented asynchronous patterns to improve responsiveness and optimized caching logic, reducing memory usage by 40%.",
+                    "ProjectName": "Flight Booking APIs & Airline Integrations",
+                    "Description": "Developed and maintained core flight booking services integrating with multiple third-party airline providers including GDS, LCCs, and NDCs. Worked on search, reprice, booking, SSR, rescheduling, and ticketing flows.",
                     "TechUsed": [
                         ".NET Core",
                         "C#",
                         "SQL Server",
                         "MongoDB",
-                        "REST API"
+                        "REST APIs"
                     ],
-                    "Role": "Backend developer responsible for core API logic, external integrations, performance tuning, and ensuring production stability.",
-                    "Outcome": "Improved API responsiveness and reduced booking latency by 30%, resulting in smoother user experience and fewer API timeouts."
+                    "Role": "Backend developer responsible for API logic, integrations, debugging, and performance tuning.",
+                    "Outcome": "Improved booking reliability and reduced API latency through async processing and query optimization."
                 },
                 {
-                    "ProjectName": "Flight APIs Testing System",
-                    "Description": "Developed a secure internal tool for testing flight-related APIs such as search, reprice, more fares, booking, SSRs (seat selection), and rescheduling. Implemented JWT-based authentication and built a user-friendly web interface using AngularJS, with a Flask backend connected to MongoDB. Enabled testing and monitoring of API performance and responses across all active users, agents, partners, and countries where the services are deployed.",
+                    "ProjectName": "Flight API Testing System",
+                    "Description": "Built an internal web-based tool for testing and monitoring flight APIs across multiple workflows, users, agents, partners, and countries. Later migrated the backend from Flask to FastAPI to support async APIs.",
                     "TechUsed": [
                         "Python",
                         "Flask",
+                        "FastAPI",
                         "MongoDB",
                         "AngularJS",
-                        "HTML",
-                        "CSS",
                         "JWT"
                     ],
-                    "Role": "Full-stack developer responsible for backend and frontend development, API communication, and internal deployment.",
-                    "Outcome": "Reduced QA testing time by over 90% and improved response accuracy tracking across multiple airline partners."
+                    "Role": "Full-stack developer",
+                    "Outcome": "Reduced QA testing time by over 90% and enabled async-compatible testing for new backend services."
                 },
                 {
-                    "ProjectName": "Scheduler Services",
-                    "Description": "Created background scheduler services using .NET Core and `Timer` to automate critical tasks like updating booking purchases, currency rates, and airline sectors. Included fraud detection alerts, daily booking reports, and API health monitoring with WhatsApp alerts. Fully deployed and running in production.",
+                    "ProjectName": "Scheduler Services & Automation",
+                    "Description": "Developed background scheduler services to automate booking updates, currency synchronization, fraud alerts, API health monitoring, and daily reporting.",
                     "TechUsed": [
                         ".NET Core",
                         "C#",
@@ -179,21 +186,49 @@
                         "SQL Server",
                         "ScottyPlot"
                     ],
-                    "Role": "Solo developer responsible for full-cycle development, scheduling logic, and deployment of automated backend services.",
-                    "Outcome": "Eliminated manual operations, saved ~4 hours of daily team effort, and enabled real-time fraud alerts and currency sync."
+                    "Role": "Solo developer",
+                    "Outcome": "Eliminated manual operational tasks and saved several hours of daily effort across teams."
                 },
                 {
                     "ProjectName": "Internal Console Tools Suite",
-                    "Description": "Developed multiple in-house console applications to boost team productivity and automate manual tasks. Tools included:\n• JSON Request Builder – generates structured payloads for C# APIs\n• 20-20-20 Eye Reminder – reduces screen strain\n• Daily Task Tracker – logs work activities\n• Auto Git Pusher – automates daily commits\n• New Sector Merger – integrates airline sectors in real time.",
+                    "Description": "Created multiple internal console applications to improve developer productivity and automate routine tasks such as JSON payload generation, daily task tracking, automated Git commits, and operational utilities.",
                     "TechUsed": [
                         "C#",
                         ".NET Core",
                         "Python",
                         "Git",
-                        "Console App"
+                        "Console Applications"
                     ],
-                    "Role": "Independently designed and built all tools at EaseMyTrip, focusing on developer experience, internal efficiency, and workflow automation.",
-                    "Outcome": "Streamlined daily developer operations, reduced repetitive task load, and encouraged healthy coding habits among team members."
+                    "Role": "Independent developer",
+                    "Outcome": "Streamlined daily developer workflows and reduced repetitive manual work."
+                },
+                {
+                    "ProjectName": "Next-Generation Flight Booking Backend Platform",
+                    "Description": "Designed and implemented a modern, fully asynchronous flight booking backend with config-driven support for monolithic and microservices-based deployments.",
+                    "TechUsed": [
+                        ".NET 8",
+                        "C#",
+                        "SQL Server",
+                        "MongoDB",
+                        "REST APIs",
+                        "Kestrel",
+                        "Linux",
+                        "Windows"
+                    ],
+                    "Role": "Primary backend developer and architect",
+                    "Outcome": "Reduced CPU usage, improved scalability, enabled cross-platform deployments, and laid the foundation for future distributed systems."
+                },
+                {
+                    "ProjectName": "WCF to .NET 8 Platform Migration",
+                    "Description": "Migrated a large legacy WCF-based flight booking platform to modern REST APIs on .NET 8 with incremental rollout and parallel production support.",
+                    "TechUsed": [
+                        ".NET Framework 4.7.2",
+                        ".NET 8",
+                        "WCF",
+                        "REST APIs"
+                    ],
+                    "Role": "Core contributor responsible for migration implementation and stability.",
+                    "Outcome": "Modernized a critical legacy system supporting 60+ providers with zero business disruption."
                 }
             ]
         }
@@ -256,65 +291,87 @@
                 "HTML",
                 "CSS"
             ],
-            "WebDevelopment": [
-                "REST API",
-                "Flask",
-                "AngularJS",
-                "JWT Authentication",
-                "Web Services"
-            ],
-            "Databases": [
-                "SQL Server",
-                "MongoDB"
+            "Backend & APIs": [
+                "RESTful API Design",
+                "Async / Await Programming",
+                "WCF to REST Migration",
+                "JWT Authentication & Authorization",
+                "API Versioning",
+                "Third-Party API Integration",
+                "High-Traffic API Development"
             ],
             "Frameworks": [
+                ".NET Framework 4.7.2",
                 ".NET Core",
-                ".NET Framework"
+                ".NET 8",
+                ".NET 10",
+                "FastAPI",
+                "Flask"
             ],
-            "CloudPlatforms-off": [
-                "Azure (Basic Usage)"
+            "Databases": [
+                "SQL Server (Query Optimization, Indexing)",
+                "MongoDB (Schema Design, Aggregations)"
             ],
-            "Tools": [
+            "Architecture & Design": [
+                "Monolithic Architecture",
+                "Config-Driven Microservices",
+                "Layered Architecture",
+                "System Design",
+                "Asynchronous Systems",
+                "Backward Compatibility Design"
+            ],
+            "Performance & Reliability": [
+                "CPU & Thread Optimization",
+                "Non-Blocking I/O",
+                "Error Handling & Resilience",
+                "Incremental Migration Strategies"
+            ],
+            "Tools & Platforms": [
                 "Git",
                 "GitHub",
                 "Visual Studio",
                 "VS Code",
                 "Postman",
-                "Console Apps",
-                "Timers in .NET",
-                "WhatsApp API",
-                "Email API"
+                "Kestrel",
+                "Linux & Windows Hosting",
+                "Console Applications",
+                "Background Scheduler Services"
             ],
-            "OtherSkills": [
-                "Backend Development",
-                "API Integration",
-                "System Design",
-                "Asynchronous Programming",
-                "Automation",
-                "Performance Optimization",
-                "Scheduling Services",
-                "Internal Tooling",
-                "Problem Solving",
-                "Object-Oriented Programming"
+            "Automation & Internal Tooling": [
+                "Scheduler Services",
+                "Internal Developer Tools",
+                "Workflow Automation",
+                "API Testing Platforms"
             ]
         },
         "FamiliarWith": {
             "Languages": [
+                "Java",
                 "C",
                 "C++",
-                "Java",
                 "Kotlin"
             ],
-            "Frameworks": [
+            "Frameworks & SDKs": [
+                "AngularJS",
                 "Android SDK"
             ],
-            "Topics": [
-                "Machine Learning",
-                "Artificial Intelligence"
+            "AI / ML (Academic Background)": [
+                "Machine Learning (Major – College Curriculum)",
+                "Artificial Intelligence Fundamentals",
+                "Supervised & Unsupervised Learning",
+                "Model Evaluation & Validation Concepts",
+                "Data Preprocessing & Feature Engineering (Basic)",
+                "Scikit-learn (Academic / Practice Level)",
+                "Probability & Statistics for ML (Basic)"
             ],
-            "Other": [
-                "Android App Development (Academic Projects)",
-                "Jupyter Notebook"
+            "Examinations & Academic Exposure": [
+                "GATE – Data Science & Artificial Intelligence (Appeared Twice)",
+                "Strong academic performance in ML-related subjects"
+            ],
+            "Developer Productivity & Research Tools": [
+                "Jupyter Notebook",
+                "Exploratory Data Analysis (Academic)",
+                "AI-Assisted Development (ChatGPT)"
             ]
         }
     },
@@ -327,11 +384,13 @@
     ],
     "LanguagesKnown": [
         "English",
-        "Hindi"
+        "Hindi",
+        "Bhojpuri"
     ],
     "Interests-off": [],
     "Availability-off": "",
-    "NoticePeriod": "3 Months",
+    "NoticePeriod": "2 Months",
+    "Availability": "Exploring Opportunities",
     "ExpectedSalary-off": "",
     "Declaration-off": ""
 }
