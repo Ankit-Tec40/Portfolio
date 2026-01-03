@@ -1,0 +1,223 @@
+{
+  "PersonalInfos": {
+    "Name": "Ankit Kumar",
+    "PhoneNumber": "6201152962",
+    "Gmail": "ankit.tec40@gmail.com",
+    "HomeTown": "Bihar",
+    "CurrentLocation": "Noida",
+    "DateOfBirth-off": "",
+    "Gender": "Male",
+    "Heading": "Backend Developer | .NET | REST APIs | SQL | Async Systems",
+    "StartDate": "Sept-2022",
+    "YearsOfExperience": "3+"
+  },
+  "Profiles": {
+    "LinkedIn": "https://www.linkedin.com/in/ankit991999",
+    "GitHub": "https://github.com/Ankit-Tec40",
+    "Portfolio": "https://ankit-tec40.github.io/Portfolio",
+    "LeetCode-off": "",
+    "HackerRank-off": "",
+    "Codeforces-off": "",
+    "Twitter-off": ""
+  },
+  "Summary": "Backend Developer with 3+ years of experience building and modernizing high-traffic flight booking systems using .NET and Python. Strong in REST API design, async programming, SQL optimization, and large-scale WCF to .NET 8 migration. Experienced with third-party integrations, scheduler services, and Linux-based deployments.",
+  "Education": [
+    {
+      "Degree": "Bachelor of Technology",
+      "Branch": "Computer Science and Engineering",
+      "College": "Lovely Professional University",
+      "University": "Lovely Professional University",
+      "StartYear": "2019",
+      "EndYear": "2023",
+      "CGPA": "8.3"
+    }
+  ],
+  "Certifications": [
+    {
+      "Title": "Full Stack Development Using Java",
+      "Issuer": "ChieperSchool",
+      "IssueDate": "Jul 2022"
+    },
+    {
+      "Title": "Data Structures and Algorithms in Java",
+      "Issuer": "GeeksForGeeks",
+      "IssueDate": "Jul 2022"
+    },
+    {
+      "Title": "Data Structures and Algorithms Using Python",
+      "Issuer": "NPTEL",
+      "IssueDate": "Apr 2021"
+    },
+    {
+      "Title": "Foundation of Artificial Intelligence",
+      "Issuer": "Skill-UP",
+      "IssueDate": "May 2021"
+    }
+  ],
+  "WorkExperience": [
+    {
+      "CompanyName": "EaseMyTrip",
+      "Role": "Software Developer (Backend)",
+      "StartDate": "Sept-2022",
+      "EndDate": "Present",
+      "Location": "Noida, India",
+      "TechUsed": [
+        "C#",
+        ".NET Framework 4.7.2",
+        ".NET Core",
+        ".NET 8",
+        "SQL Server",
+        "MongoDB",
+        "REST APIs",
+        "WCF",
+        "Python",
+        "FastAPI",
+        "JWT",
+        "Linux",
+        "Kestrel",
+        "Git"
+      ],
+      "ExternalAPIs": {
+        "Integrated": [
+          "Travelport",
+          "Sabre",
+          "SabreNDC",
+          "PKFare",
+          "FlyCreative"
+        ],
+        "WorkedOn": [
+          "Indigo",
+          "AirAsia",
+          "Akasa",
+          "SpiceJet"
+        ]
+      },
+      "Overview": "Backend engineer working on core flight booking platforms, API integrations, and system modernization.",
+      "Responsibilities": [
+        "Built and maintained scalable REST APIs supporting search, reprice, booking, and ticketing flows.",
+        "Integrated 60+ third-party airline APIs (GDS, LCC, NDC).",
+        "Migrated legacy WCF (.NET 4.7.2) services to modern .NET 8 REST APIs.",
+        "Refactored blocking code into async/await flows, reducing CPU usage and improving throughput.",
+        "Optimized SQL Server and MongoDB queries for high-traffic production workloads.",
+        "Developed background scheduler services for monitoring, reporting, and automation.",
+        "Enabled Linux-based deployments using Kestrel and cross-platform hosting."
+      ],
+      "Projects": [
+        {
+          "ProjectName": "Flight Booking APIs & Integrations",
+          "Description": "Core backend services for flight search, booking, and ticketing with multiple airline providers.",
+          "TechUsed": [
+            ".NET",
+            "C#",
+            "SQL Server",
+            "MongoDB",
+            "REST APIs"
+          ],
+          "Role": "Backend Developer",
+          "Outcome": "Improved booking stability and reduced API latency through async processing."
+        },
+        {
+          "ProjectName": "WCF to .NET 8 Migration",
+          "Description": "Incremental migration of a large legacy WCF platform to modern REST APIs with parallel production support.",
+          "TechUsed": [
+            ".NET Framework",
+            ".NET 8",
+            "WCF",
+            "REST APIs"
+          ],
+          "Role": "Core Migration Contributor",
+          "Outcome": "Modernized critical systems with zero business disruption."
+        }
+      ]
+    }
+  ],
+  "PersonalProjects": [
+    {
+      "ProjectName": "Full Screen Clock – Android App",
+      "Description": "Digital clock app for study sessions and desk timers. Supports 12/24-hour format with custom themes.",
+      "TechUsed": [
+        "Java",
+        "Android SDK"
+      ],
+      "Role": "Solo developer"
+    },
+    {
+      "ProjectName": "Math Tables Learner – Android App",
+      "Description": "Interactive app for learning multiplication tables with audio-based teaching and gamified tests.",
+      "TechUsed": [
+        "Java",
+        "Android SDK"
+      ],
+      "Role": "Solo developer"
+    },
+    {
+      "ProjectName": "Maths Practice App",
+      "Description": "Mental math practice app with adaptive difficulty scaling and timed challenges.",
+      "TechUsed": [
+        "Java",
+        "Android SDK"
+      ],
+      "Role": "Solo developer"
+    }
+  ],
+  "Skills": {
+    "PrimarySkills": [
+      {
+        "Category": "Languages",
+        "Items": [
+          "C#",
+          "Python",
+          "SQL"
+        ]
+      },
+      {
+        "Category": "Backend & APIs",
+        "Items": [
+          "REST API Design",
+          "Async / Await",
+          "WCF to REST Migration",
+          "JWT Authentication",
+          "Third-Party API Integration"
+        ]
+      },
+      {
+        "Category": "Frameworks",
+        "Items": [
+          ".NET Framework",
+          ".NET Core",
+          ".NET 8",
+          "FastAPI"
+        ]
+      },
+      {
+        "Category": "Databases",
+        "Items": [
+          "SQL Server",
+          "MongoDB"
+        ]
+      },
+      {
+        "Category": "Tools & Platforms",
+        "Items": [
+          "Git",
+          "Postman",
+          "Linux",
+          "Windows",
+          "Kestrel"
+        ]
+      }
+    ],
+    "FamiliarWith-off": []
+  },
+  "Achievements-off": [],
+  "LanguagesKnown": [
+    "English",
+    "Hindi"
+  ],
+  "Interests-off": [],
+  "Availability-off": "",
+  "NoticePeriod": "2 Months",
+  "Availability": "Exploring Opportunities",
+  "ExpectedSalary-off": "",
+  "Declaration-off": ""
+}

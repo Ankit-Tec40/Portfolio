@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ankit Kumar - Backend Developer Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e293b;
+      --secondary: #475569;
+      --accent: #2563eb;
+      --accent-dark: #1e40af;
+      --text: #334155;
+      --border: #e2e8f0;
+      --bg: #ffffff;
+      --bg-sidebar: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.45;
+      color: var(--text);
+      background: #cbd5e1;
+      font-size: 9pt;
+      /* Compact font size */
+    }
+
+    .resume-container {
+      width: 210mm;
+      height: 297mm;
+      /* Fixed A4 height */
+      margin: 20px auto;
+      background: var(--bg);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+      display: grid;
+      grid-template-columns: 65mm 1fr;
+      /* Left Sidebar, Right Content */
+      overflow: hidden;
+      /* Ensure 1 page */
+    }
+
+    /* --- Left Sidebar --- */
+    .sidebar {
+      background: var(--primary);
+      color: white;
+      padding: 25px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .profile-section {
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 20pt;
+      font-weight: 700;
+      margin-bottom: 5px;
+      line-height: 1.1;
+      color: white;
+    }
+
+    .role-title {
+      font-size: 10pt;
+      color: #94a3b8;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 8.5pt;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+
+    .contact-item i {
+      width: 14px;
+      text-align: center;
+    }
+
+    .sidebar-section h2 {
+      font-size: 11pt;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #475569;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .education-item,
+    .cert-item {
+      margin-bottom: 12px;
+    }
+
+    .degree {
+      font-weight: 600;
+      color: white;
+      font-size: 9pt;
+    }
+
+    .institution {
+      color: #94a3b8;
+      font-size: 8.5pt;
+    }
+
+    .date-sidebar {
+      color: #64748b;
+      font-size: 8pt;
+      font-style: italic;
+    }
+
+    .skill-group {
+      margin-bottom: 10px;
+    }
+
+    .skill-group-title {
+      font-weight: 600;
+      color: #e2e8f0;
+      font-size: 9pt;
+      margin-bottom: 4px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tag {
+      background: #334155;
+      color: #cbd5e1;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 8pt;
+    }
+
+    /* --- Right Content --- */
+    .main-content {
+      padding: 25px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .main-section h2 {
+      font-size: 12pt;
+      text-transform: uppercase;
+      color: var(--primary);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 3px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .summary {
+      text-align: justify;
+      color: var(--text);
+      font-size: 9pt;
+    }
+
+    .exp-item {
+      margin-bottom: 12px;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .company {
+      font-weight: 700;
+      font-size: 10.5pt;
+      color: var(--primary);
+    }
+
+    .job-role {
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 9.5pt;
+    }
+
+    .job-date {
+      font-size: 9pt;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    .api-section {
+      background: #f1f5f9;
+      padding: 6px 10px;
+      border-radius: 4px;
+      margin: 6px 0;
+      font-size: 8.5pt;
+      border-left: 3px solid var(--accent);
+    }
+
+    .bullet-list {
+      margin-left: 15px;
+    }
+
+    .bullet-list li {
+      margin-bottom: 2px;
+      text-align: justify;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px;
+      background: #fafafa;
+    }
+
+    .proj-name {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 9.5pt;
+      margin-bottom: 2px;
+    }
+
+    .proj-tech {
+      font-size: 8pt;
+      color: var(--accent-dark);
+      margin-bottom: 4px;
+      font-style: italic;
+    }
+
+    .proj-desc {
+      font-size: 8.5pt;
+      color: var(--text);
+    }
+
+    /* Print & Utils */
+    .download-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--accent);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      border: none;
+      z-index: 1000;
+      font-family: inherit;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body {
+        background: white;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .resume-container {
+        margin: 0;
+        box-shadow: none;
+        height: 100vh;
+        /* Force full height */
+      }
+
+      .download-btn {
+        display: none;
+      }
+
+      .sidebar {
+        background: var(--primary) !important;
+        color: white !important;
+      }
+    }
+  </style>
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <button onclick="window.print()" class="download-btn">Download PDF</button>
+
+  <div class="resume-container" id="resume-content">
+    <!-- Content via JS -->
+  </div>
+
+  <script>
+    async function loadResume() {
+      try {
+        const response = await fetch('resumeData.json');
+        const data = await response.json();
+        renderResume(data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    function renderResume(data) {
+      const container = document.getElementById('resume-content');
+
+      // --- Helper to generate skills tags ---
+      const renderSkills = (skills) => {
+        return skills.map(cat => `
+                    <div class="skill-group">
+                        <div class="skill-group-title">${cat.Category}</div>
+                        <div class="skill-tags">
+                            ${cat.Items.map(item => `<span class="tag">${item}</span>`).join('')}
+                        </div>
+                    </div>
+                `).join('');
+      };
+
+      // --- Left Sidebar Content ---
+      const sidebarHtml = `
+                <aside class="sidebar">
+                    <div class="profile-section">
+                        <h1>${data.PersonalInfos.Name.split(' ')[0]}<br>${data.PersonalInfos.Name.split(' ')[1]}</h1>
+                        <div class="role-title">${data.PersonalInfos.Heading.split('|')[0].trim()}</div>
+                        
+                        <div class="contact-info">
+                            <a href="tel:${data.PersonalInfos.PhoneNumber}" class="contact-item">
+                                <i class="fas fa-phone"></i> ${data.PersonalInfos.PhoneNumber}
+                            </a>
+                            <a href="mailto:${data.PersonalInfos.Gmail}" class="contact-item">
+                                <i class="fas fa-envelope"></i> ${data.PersonalInfos.Gmail}
+                            </a>
+                            <span class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i> ${data.PersonalInfos.CurrentLocation}
+                            </span>
+                            ${data.Profiles.LinkedIn ? `<a href="${data.Profiles.LinkedIn}" target="_blank" class="contact-item"><i class="fab fa-linkedin"></i> LinkedIn</a>` : ''}
+                            ${data.Profiles.GitHub ? `<a href="${data.Profiles.GitHub}" target="_blank" class="contact-item"><i class="fab fa-github"></i> GitHub</a>` : ''}
+                            ${data.Profiles.Portfolio ? `<a href="${data.Profiles.Portfolio}" target="_blank" class="contact-item"><i class="fas fa-globe"></i> Portfolio</a>` : ''}
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h2>Skills</h2>
+                        ${renderSkills(data.Skills.PrimarySkills.slice(0, 4))} 
+                        <!-- Slicing to fit top skills -->
+                    </div>
+
+                     <div class="sidebar-section">
+                        <h2>Education</h2>
+                        ${data.Education.map(edu => `
+                            <div class="education-item">
+                                <div class="degree">${edu.Degree}</div>
+                                <div class="institution">${edu.College}</div>
+                                <div class="date-sidebar">${edu.StartYear} - ${edu.EndYear}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h2>Certifications</h2>
+                        ${data.Certifications.map(cert => `
+                            <div class="cert-item">
+                                <div class="degree">${cert.Title}</div>
+                                <div class="institution">${cert.Issuer}</div>
+                                <div class="date-sidebar">${cert.IssueDate}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </aside>
+            `;
+
+      // --- Right Main Content ---
+
+      // Work Experience
+      let workHtml = '';
+      if (data.WorkExperience && data.WorkExperience.length > 0) {
+        data.WorkExperience.forEach(job => {
+          // API Section
+          let apiHtml = '';
+          if (job.ExternalAPIs) {
+            const integrated = job.ExternalAPIs.Integrated ? job.ExternalAPIs.Integrated.slice(0, 6).join(', ') : '';
+            const managed = job.ExternalAPIs.WorkedOn ? job.ExternalAPIs.WorkedOn.join(', ') : '';
+            if (integrated || managed) {
+              apiHtml = `
+                                <div class="api-section">
+                                    ${integrated ? `<div><strong>Integrated:</strong> ${integrated}</div>` : ''}
+                                    ${managed ? `<div><strong>Managed:</strong> ${managed}</div>` : ''}
+                                </div>
+                            `;
+            }
+          }
+
+          workHtml += `
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <div>
+                                    <span class="company">${job.CompanyName}</span>
+                                    <span class="job-role"> | ${job.Role}</span>
+                                </div>
+                                <span class="job-date">${job.StartDate} - ${job.EndDate}</span>
+                            </div>
+                            
+                            ${apiHtml}
+
+                            <ul class="bullet-list">
+                                ${job.Responsibilities.slice(0, 6).map(r => `<li>${r}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+        });
+      }
+
+      // Projects (Top 4)
+      let projectHtml = '<div class="project-grid">';
+      const projects = data.WorkExperience[0].Projects || [];
+      // Filtering logically
+      const keyProjects = projects.filter(p => !p.ProjectName.includes("Console"));
+
+      keyProjects.slice(0, 4).forEach(p => {
+        projectHtml += `
+                    <div class="project-card">
+                        <div class="proj-name">${p.ProjectName}</div>
+                        <div class="proj-tech">${p.TechUsed.slice(0, 3).join(', ')}</div>
+                        <div class="proj-desc">${p.Description}</div>
+                    </div>
+                `;
+      });
+      projectHtml += '</div>';
+
+      const mainHtml = `
+                <main class="main-content">
+                    <div class="main-section">
+                        <h2><i class="fas fa-user-tie"></i> Professional Summary</h2>
+                        <div class="summary">${data.Summary}</div>
+                    </div>
+
+                    <div class="main-section">
+                        <h2><i class="fas fa-briefcase"></i> Experience</h2>
+                        ${workHtml}
+                    </div>
+
+                    <div class="main-section">
+                        <h2><i class="fas fa-rocket"></i> Key Projects</h2>
+                        ${projectHtml}
+                    </div>
+                </main>
+            `;
+
+      container.innerHTML = sidebarHtml + mainHtml;
+    }
+
+    loadResume();
+  </script>
+</body>
+
+</html>
