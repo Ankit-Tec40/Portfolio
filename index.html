@@ -1,233 +1,811 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="portfolioApp" ng-cloak>
+<html lang="en" ng-app="portfolioApp">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ankit Kumar | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit Kumar | Senior Backend Engineer</title>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
-  <style>
-    * {
-      scroll-behavior: smooth;
-    }
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: linear-gradient(to bottom, #f4f4f4, #eaeaea);
-      color: #333;
-    }
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
-    header,
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
+    <style>
+        :root {
+            /* Premium Dark Theme "Cosmos" */
+            --bg-color: #020617;
+            --bg-card: rgba(30, 41, 59, 0.4);
+            --bg-card-hover: rgba(51, 65, 85, 0.6);
+            --border: rgba(255, 255, 255, 0.08);
+            --accent-primary: #8b5cf6;
+            /* Violet */
+            --accent-secondary: #06b6d4;
+            /* Cyan */
+            --accent-success: #10b981;
+            /* Emerald */
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+        }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background: #34495e;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 0% 0%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 100% 0%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+        }
 
-    .container {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
+        /* Utility */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.01em;
+        }
 
-    h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.5rem;
-    }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
 
-    .card {
-      background: white;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+        a:hover {
+            color: var(--accent-primary);
+        }
 
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-    }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-    li::before {
-      content: '✔️';
-      margin-right: 0.5rem;
-    }
+        /* Glass Card */
+        .glass-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
 
-    footer a {
-      color: #00aced;
-      text-decoration: none;
-    }
-  </style>
+        /* Subtle shine effect */
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.03), transparent);
+            transform: skewX(-25deg);
+            transition: 0.5s;
+        }
+
+        .glass-card:hover::before {
+            left: 150%;
+        }
+
+        /* Header / Profile Sidebar */
+        header {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .profile-card {
+            padding: 2.5rem;
+            text-align: center;
+            height: fit-content;
+            position: sticky;
+            top: 2rem;
+            border-top: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            padding: 4px;
+            background: rgba(255, 255, 255, 0.03);
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.2);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 1.2rem;
+            background: rgba(16, 185, 129, 0.1);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 99px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 1.5rem 0;
+            letter-spacing: 0.02em;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #34d399;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #34d399;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.85);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Profile Details Box */
+        .info-box {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1.2rem;
+            border-radius: 16px;
+            margin-top: 1.5rem;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        .info-item {
+            margin-bottom: 1rem;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-label {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .info-val {
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            transition: all 0.2s;
+        }
+
+        .social-btn:hover {
+            background: var(--accent-primary);
+            color: #fff;
+            transform: translateY(-4px);
+            border-color: var(--accent-primary);
+        }
+
+        /* Right Content Area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .section-title i {
+            color: var(--accent-secondary);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            padding: 1.5rem;
+            text-align: center;
+            background: linear-gradient(160deg, rgba(255, 255, 255, 0.03), transparent);
+        }
+
+        .stat-num {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 30%, var(--accent-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Skills Grid (New Array Structure) */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            padding: 1.5rem;
+            border-left: 1px solid var(--border);
+            border-top: 1px solid var(--border);
+        }
+
+        .skill-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .s-tag {
+            font-size: 0.85rem;
+            padding: 0.4rem 0.9rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-muted);
+            transition: 0.2s;
+        }
+
+        .s-tag:hover {
+            background: rgba(6, 182, 212, 0.1);
+            color: #67e8f9;
+            border-color: rgba(6, 182, 212, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Work Experience */
+        .job-card {
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .role-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .company-name {
+            font-size: 1.1rem;
+            color: var(--accent-primary);
+            font-weight: 500;
+        }
+
+        .job-time {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+
+        /* Overview Highlight */
+        .overview-box {
+            background: linear-gradient(to right, rgba(139, 92, 246, 0.1), transparent);
+            padding: 1.25rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            list-style: none;
+        }
+
+        .bullet-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-success);
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+        }
+
+        /* Project Cards (Company & Personal) */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .p-card {
+            padding: 1.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-top: 3px solid transparent;
+        }
+
+        .p-card:hover {
+            border-top-color: var(--accent-secondary);
+            transform: translateY(-5px);
+        }
+
+        .p-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+
+        .p-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .tech-stack-mini {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        .mini-tag {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        /* Floating Navigation */
+        .nav-container {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 99px;
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-link i {
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            width: 5px;
+            height: 5px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent-primary);
+        }
+
+        /* Mobile Nav Adjustment */
+        @media (max-width: 768px) {
+            .nav-container {
+                bottom: 1.5rem;
+                padding: 0.8rem 1.2rem;
+                gap: 1.2rem;
+                width: 95%;
+                justify-content: space-between;
+                overflow-x: auto;
+            }
+
+            .nav-link span {
+                display: none;
+                /* Hide text on small screens to save space */
+            }
+        }
+
+        @media (min-width: 769px) {
+            .nav-link span {
+                display: inline;
+            }
+        }
+    </style>
 </head>
 
 <body ng-controller="PortfolioController">
 
-  <header>
-    <h1>{{data.PersonalInfos.Name}}</h1>
-    <p>{{data.PersonalInfos.Heading}}</p>
-    <p>{{data.PersonalInfos.Gmail}} | {{data.PersonalInfos.PhoneNumber}}</p>
-  </header>
+    <!-- Floating Navigation -->
+    <nav class="nav-container">
+        <a href="#home" class="nav-link" title="Home"><i class="fas fa-home"></i> <span>Home</span></a>
+        <a href="#about" class="nav-link" title="About"><i class="fas fa-user"></i> <span>About</span></a>
+        <a href="#skills" class="nav-link" title="Skills"><i class="fas fa-code"></i> <span>Skills</span></a>
+        <a href="#experience" class="nav-link" title="Experience"><i class="fas fa-briefcase"></i>
+            <span>Experience</span></a>
+        <a href="#projects" class="nav-link" title="Projects"><i class="fas fa-rocket"></i> <span>Projects</span></a>
+        <a href="#education" class="nav-link" title="Education"><i class="fas fa-graduation-cap"></i>
+            <span>Education</span></a>
+    </nav>
 
-  <nav>
-    <a href="#summary">Summary</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#certs">Certifications</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#languages">Languages</a>
-  </nav>
+    <div class="container" id="home">
 
-  <div class="container">
+        <header>
+            <!-- Sidebar: Profile & Quick Info -->
+            <div class="glass-card profile-card">
+                <img src="myImage.jpg" alt="Profile" class="profile-pic">
 
-    <!-- SUMMARY -->
-    <div id="summary">
-      <h2>Summary</h2>
-      <p>{{data.Summary}}</p>
+                <h1
+                    style="font-size: 2.2rem; margin-bottom: 0.5rem; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    {{data.PersonalInfos.Name}}</h1>
+                <p style="color: var(--accent-primary); font-size: 1.1rem;">{{data.PersonalInfos.Heading}}</p>
+
+                <div class="status-badge" ng-if="data.Availability">
+                    <div class="status-dot"></div>
+                    {{data.Availability}}
+                </div>
+
+                <div class="info-box">
+                    <div class="info-item">
+                        <div class="info-label">Notice Period</div>
+                        <div class="info-val">{{data.NoticePeriod}}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Current Location</div>
+                        <div class="info-val">{{data.PersonalInfos.CurrentLocation}}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Email</div>
+                        <div class="info-val" style="font-size: 0.9rem;">
+                            <a href="mailto:{{data.PersonalInfos.Gmail}}">{{data.PersonalInfos.Gmail}}</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Phone</div>
+                        <div class="info-val">{{data.PersonalInfos.PhoneNumber}}</div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a ng-href="{{data.Profiles.LinkedIn}}" target="_blank" class="social-btn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a ng-href="{{data.Profiles.GitHub}}" target="_blank" class="social-btn"><i
+                            class="fab fa-github"></i></a>
+                    <a href="mailto:{{data.PersonalInfos.Gmail}}" class="social-btn"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="content-area">
+
+                <!-- 1. Stats Row -->
+                <div class="stats-grid">
+                    <div class="glass-card stat-card">
+                        <div class="stat-num">{{data.PersonalInfos.YearsOfExperience}}</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="glass-card stat-card">
+                        <div class="stat-num">{{totalProjects}}+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="glass-card stat-card">
+                        <div class="stat-num">60+</div>
+                        <div class="stat-label">Airline Integrations</div>
+                    </div>
+                </div>
+
+                <!-- 2. Summary -->
+                <div id="about" class="glass-card" style="padding: 2.5rem; scroll-margin-top: 2rem;">
+                    <h2 class="section-title"><i class="fas fa-terminal"></i> About Me</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #cbd5e1;">
+                        {{data.Summary}}
+                    </p>
+                </div>
+
+                <!-- 3. Primary Skills (The new Array Structure) -->
+                <div id="skills" style="scroll-margin-top: 2rem;">
+                    <h2 class="section-title"><i class="fas fa-laptop-code"></i> Technical Expertise</h2>
+                    <div class="skills-grid">
+                        <div class="glass-card skill-card" ng-repeat="s in data.Skills.PrimarySkills">
+                            <div class="skill-title">
+                                <i class="fas fa-check-circle" style="font-size: 0.9rem;"></i> {{s.Category}}
+                            </div>
+                            <div class="skill-tags-wrapper">
+                                <span class="s-tag" ng-repeat="item in s.Items">{{item}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Work Experience (With Overview) -->
+                <div id="experience" style="scroll-margin-top: 2rem;">
+                    <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
+
+                    <div ng-repeat="job in data.WorkExperience">
+                        <div class="glass-card job-card">
+                            <div class="job-header">
+                                <div>
+                                    <div class="role-title">{{job.Role}}</div>
+                                    <div class="company-name">{{job.CompanyName}}</div>
+                                </div>
+                                <div class="job-time">
+                                    {{job.StartDate}} - {{job.EndDate}}
+                                </div>
+                            </div>
+
+                            <!-- The new Overview Highlight -->
+                            <div class="overview-box" ng-if="job.Overview">
+                                <strong style="color: #fff; display: block; margin-bottom: 0.5rem;">Role
+                                    Overview</strong>
+                                <span style="color: #cbd5e1;">{{job.Overview}}</span>
+                            </div>
+
+                            <ul class="bullet-list">
+                                <li ng-repeat="resp in job.Responsibilities">{{resp}}</li>
+                            </ul>
+                        </div>
+
+                        <!-- Projects moved to main Projects section below -->
+                    </div>
+                </div>
+
+                <!-- 6. Projects Section (Split into Professional & Personal) -->
+                <div id="projects" style="scroll-margin-top: 2rem;">
+                    <h2 class="section-title"><i class="fas fa-rocket"></i> Projects</h2>
+
+                    <!-- 6.1 Professional Projects -->
+                    <div style="margin-bottom: 3rem;">
+                        <h3
+                            style="font-size: 1.4rem; color: var(--accent-secondary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-building"></i> Professional Work
+                        </h3>
+
+                        <!-- Iterate through jobs to find projects -->
+                        <div ng-repeat="job in data.WorkExperience" ng-if="job.Projects && job.Projects.length > 0">
+                            <!-- Company Label per group -->
+                            <div
+                                style="margin-bottom: 1rem; color: var(--text-dim); font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase;">
+                                Projects at {{job.CompanyName}}
+                            </div>
+
+                            <div class="project-grid" style="margin-bottom: 2rem;">
+                                <div class="glass-card p-card" ng-repeat="proj in job.Projects">
+                                    <div class="p-title">{{proj.ProjectName}}</div>
+                                    <div class="p-desc">{{proj.Description}}</div>
+                                    <div style="margin-bottom: 1rem;">
+                                        <div style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 0.25rem;">
+                                            <strong>Role:</strong> {{proj.Role}}
+                                        </div>
+                                        <div style="font-size: 0.85rem; color: var(--accent-success);">
+                                            <strong>Outcome:</strong> {{proj.Outcome}}
+                                        </div>
+                                    </div>
+                                    <div class="tech-stack-mini">
+                                        <span class="mini-tag" ng-repeat="t in proj.TechUsed">{{t}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6.2 Personal Projects -->
+                    <div ng-if="data.PersonalProjects && data.PersonalProjects.length > 0">
+                        <h3
+                            style="font-size: 1.4rem; color: var(--accent-primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-laptop-code"></i> Personal Projects & Apps
+                        </h3>
+                        <div class="project-grid">
+                            <div class="glass-card p-card" ng-repeat="pp in data.PersonalProjects">
+                                <div class="p-title">{{pp.ProjectName}}</div>
+                                <div class="p-desc">{{pp.Description}}</div>
+                                <div style="margin-bottom: 1rem;" ng-if="pp.Highlights">
+                                    <ul style="padding-left: 1.2rem; font-size: 0.9rem; color: var(--text-muted);">
+                                        <li ng-repeat="h in pp.Highlights">{{h}}</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-stack-mini">
+                                    <span class="mini-tag" ng-repeat="t in pp.TechUsed">{{t}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Familiar With (Secondary Skills) -->
+                <div>
+                    <h2 class="section-title" style="font-size: 1.4rem;"><i class="fas fa-book-reader"></i> Other
+                        Knowledge</h2>
+                    <div class="skills-grid">
+                        <div class="glass-card skill-card" ng-repeat="s in data.Skills.FamiliarWith"
+                            style="border-left: 1px solid rgba(255,255,255,0.05);">
+                            <div class="skill-title" style="color: var(--text-dim);">{{s.Category}}</div>
+                            <div class="skill-tags-wrapper">
+                                <span class="s-tag" ng-repeat="item in s.Items"
+                                    style="background: transparent; border-color: rgba(255,255,255,0.05);">{{item}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Education -->
+                <div id="education" style="margin-top: 2rem; scroll-margin-top: 2rem;">
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="glass-card"
+                        style="padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;"
+                        ng-repeat="edu in data.Education">
+                        <div>
+                            <div style="font-size: 1.2rem; font-weight: 700; color: #fff;">{{edu.Degree}} in
+                                {{edu.Branch}}</div>
+                            <div style="color: var(--accent-secondary); margin-top: 0.25rem;">{{edu.College}}</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 1.1rem; color: #fff; font-weight: 600;">{{edu.StartYear}} -
+                                {{edu.EndYear}}</div>
+                            <div style="color: var(--text-dim);">CGPA: {{edu.CGPA}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- Content End -->
+    </div> <!-- Container End -->
+
+    <footer
+        style="text-align: center; padding: 4rem 0; padding-bottom: 8rem; color: var(--text-dim); margin-top: 2rem;">
+        <p>Designed for Scale. Built with Angular.</p>
+    </footer>
+
     </div>
 
-    <!-- EXPERIENCE -->
-    <div id="experience" ng-if="data.WorkExperience && data.WorkExperience.length">
-      <h2>Work Experience</h2>
+    <script>
+        var app = angular.module('portfolioApp', []);
 
-      <div class="card" ng-repeat="job in data.WorkExperience">
-        <h3>{{job.Role}} @ {{job.CompanyName}}</h3>
-        <p>{{job.StartDate}} – {{job.EndDate}} | {{job.Location}}</p>
+        app.controller('PortfolioController', function ($scope, $http) {
+            $scope.data = {};
+            $scope.totalProjects = 0;
 
-        <ul>
-          <li ng-repeat="r in job.Responsibilities">{{r}}</li>
-        </ul>
+            // Using the requested *mydata_E.json*
+            $http.get('mydata_E.json').then(function (response) {
+                const rawData = response.data;
+                const cleanData = {};
 
-        <div ng-if="job.Projects && job.Projects.length">
-          <h4>Company Projects</h4>
+                // Clean keys ending with -off
+                for (const key in rawData) {
+                    if (!key.endsWith('-off')) {
+                        cleanData[key] = rawData[key];
+                    }
+                }
+                $scope.data = cleanData;
 
-          <div class="card" ng-repeat="p in job.Projects">
-            <strong>{{p.ProjectName}}</strong>
-            <p>{{p.Description}}</p>
-            <p><strong>Tech:</strong> {{p.TechUsed.join(', ')}}</p>
-            <p><strong>Outcome:</strong> {{p.Outcome}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+                // Calculate stats
+                let count = 0;
+                if ($scope.data.PersonalProjects) count += $scope.data.PersonalProjects.length;
+                if ($scope.data.WorkExperience) {
+                    $scope.data.WorkExperience.forEach(job => {
+                        if (job.Projects) count += job.Projects.length;
+                    });
+                }
+                $scope.totalProjects = count;
 
-    <!-- PERSONAL PROJECTS -->
-    <div id="projects" ng-if="data.PersonalProjects && data.PersonalProjects.length">
-      <h2>Personal Projects</h2>
-
-      <div class="card" ng-repeat="proj in data.PersonalProjects">
-        <h3>{{proj.ProjectName}}</h3>
-        <p>{{proj.Description}}</p>
-        <p><strong>Tech:</strong> {{proj.TechUsed.join(', ')}}</p>
-        <p><strong>Role:</strong> {{proj.Role}}</p>
-
-        <ul ng-if="proj.Highlights && proj.Highlights.length">
-          <li ng-repeat="h in proj.Highlights">{{h}}</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- CERTIFICATIONS -->
-    <div id="certs" ng-if="data.Certifications && data.Certifications.length">
-      <h2>Certifications</h2>
-
-      <div class="card" ng-repeat="c in data.Certifications">
-        <strong>{{c.Title}}</strong> – {{c.Issuer}}
-        <p>{{c.IssueDate}}</p>
-        <p><strong>Skills:</strong> {{c.Skills.join(', ')}}</p>
-      </div>
-    </div>
-
-    <!-- SKILLS (FIXED & SAFE) -->
-    <div id="skills" ng-if="data.Skills">
-      <h2>Skills</h2>
-
-      <div class="card" ng-if="data.Skills.PrimarySkills && data.Skills.PrimarySkills.length">
-        <h3>Primary Skills</h3>
-
-        <div ng-repeat="s in data.Skills.PrimarySkills" ng-if="s.Items && s.Items.length">
-          <p><strong>{{s.Category}}:</strong> {{s.Items.join(', ')}}</p>
-        </div>
-      </div>
-
-      <div class="card" ng-if="data.Skills.FamiliarWith && data.Skills.FamiliarWith.length">
-        <h3>Familiar With</h3>
-
-        <div ng-repeat="s in data.Skills.FamiliarWith" ng-if="s.Items && s.Items.length">
-          <p><strong>{{s.Category}}:</strong> {{s.Items.join(', ')}}</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- EDUCATION -->
-    <div id="education" ng-if="data.Education && data.Education.length">
-      <h2>Education</h2>
-      <div class="card">
-        <strong>{{data.Education[0].Degree}}</strong><br>
-        {{data.Education[0].College}} ({{data.Education[0].StartYear}} – {{data.Education[0].EndYear}})
-        | CGPA: {{data.Education[0].CGPA}}
-      </div>
-    </div>
-
-    <!-- LANGUAGES -->
-    <div id="languages" ng-if="data.LanguagesKnown && data.LanguagesKnown.length">
-      <h2>Languages Known</h2>
-      <div class="card">
-        {{data.LanguagesKnown.join(', ')}}
-      </div>
-    </div>
-
-  </div>
-
-  <footer>
-    <p>
-      <a href="{{data.Profiles.LinkedIn}}" target="_blank">LinkedIn</a> |
-      <a href="{{data.Profiles.GitHub}}" target="_blank">GitHub</a>
-    </p>
-  </footer>
-
-  <script>
-    angular.module('portfolioApp', [])
-      .controller('PortfolioController', function ($scope, $http) {
-
-        $http.get('mydata.json').then(function (response) {
-
-          // remove all -off keys (top-level only)
-          const clean = {};
-          for (const key in response.data) {
-            if (!key.endsWith('-off')) {
-              clean[key] = response.data[key];
-            }
-          }
-
-          $scope.data = clean;
+            }, function (error) {
+                console.error("Error loading mydata_E.json", error);
+            });
         });
-
-      });
-  </script>
-
+    </script>
 </body>
 
 </html>
