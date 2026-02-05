@@ -250,7 +250,7 @@
             const profProj = exp.Projects.slice(0, 4).map(p => `
                 <div class="proj-item">
                     <div class="proj-head">${p.ProjectName}</div>
-                    <div class="proj-tech">${p.TechUsed.slice(0, 4).join(', ')}</div>
+                    <div class="proj-tech">${p.TechUsed.slice(0, 5).join(', ')}</div>
                     <div class="proj-desc">${p.Description}</div>
                 </div>
             `).join('');
@@ -317,7 +317,7 @@
                      <h2>Education</h2>
                      ${data.Education.map(e => `
                         <div class="edu-flex">
-                            <strong>${e.Degree} in ${e.Branch}</strong>
+                            <strong>${e.Degree} in ${e.Branch}  with (${e.CGPA} CGPA)</strong>
                             <span>${e.College} (${e.StartYear}-${e.EndYear})</span>
                         </div>
                      `).join('')}

@@ -144,7 +144,7 @@
             "Overview": "Backend developer responsible for building, integrating, modernizing, and scaling flight booking systems. Experience spans legacy WCF services, modern async REST APIs, internal tools, scheduler services, and platform migration initiatives.",
             "Responsibilities": [
                 "Developed and maintained scalable, production-grade backend systems for flight operations using .NET and Python.",
-                "Integrated and supported 60+ third-party airline APIs to enable live search, reprice, booking, ticketing, and post-booking workflows.",
+                "Integrated and supported 8+ third-party airline and GDS APIs (including Sabre, Sabre NDC, Travelport JSON, PKFare, FlyCreative, Travelopedia, and Vicky API) to enable real-time search, repricing, booking, ticketing, and post-booking workflows.",
                 "Built and maintained RESTful APIs and Web Services supporting high-traffic flight booking operations.",
                 "Designed and developed internal tools and services to automate repetitive operational and testing workflows.",
                 "Optimized SQL Server and MongoDB queries, caching logic, and execution paths to improve performance and reduce system load.",
@@ -197,6 +197,7 @@
                         ".NET Core",
                         "C#",
                         "Timer",
+                        "MongoDB",
                         "SQL Server",
                         "ScottyPlot"
                     ],
