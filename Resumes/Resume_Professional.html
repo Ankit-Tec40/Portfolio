@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resume - Professional</title>
+    <style>
+        :root {
+            --text-main: #000;
+            --border-line: #000;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 15mm 18mm;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            border-bottom: 1px solid black;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 22pt;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            margin-top: 4px;
+            font-size: 10pt;
+        }
+
+        .contact-info a {
+            color: black;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        /* Content */
+        .section {
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 11pt;
+            text-transform: uppercase;
+            border-bottom: 1px solid black;
+            margin: 0 0 6px 0;
+            padding-bottom: 2px;
+            font-weight: bold;
+        }
+
+        .summary {
+            font-size: 10pt;
+            text-align: justify;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        /* Experience */
+        .exp-entry {
+            margin-bottom: 8px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10.5pt;
+            font-weight: bold;
+        }
+
+        .exp-subheader {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10pt;
+            font-style: italic;
+            margin-bottom: 2px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        li {
+            font-size: 10pt;
+            text-align: justify;
+            margin-bottom: 1px;
+            line-height: 1.3;
+        }
+
+        /* Skills */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10pt;
+            margin-bottom: 5px;
+        }
+
+        .skills-table td {
+            padding: 1px 4px;
+            vertical-align: top;
+        }
+
+        .skill-label {
+            font-weight: bold;
+            width: 120px;
+        }
+
+        /* Projects */
+        .proj-name {
+            font-weight: bold;
+            font-size: 10pt;
+            display: inline;
+        }
+
+        .proj-desc {
+            font-size: 10pt;
+            display: inline;
+        }
+
+        .project-line {
+            margin-bottom: 3px;
+        }
+
+        /* Education */
+        .edu-flex {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10pt;
+        }
+
+        .edu-entry {
+            margin-bottom: 2px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page" id="content"></div>
+
+    <script>
+        fetch('resumeData.json').then(r => r.json()).then(data => {
+            const exp = data.WorkExperience[0];
+            const bullets = exp.Responsibilities.slice(0, 5).map(r => `<li>${r}</li>`).join('');
+
+            // Format Experience
+            const expHtml = `
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <span>${exp.CompanyName}</span>
+                        <span>${exp.Location}</span>
+                    </div>
+                    <div class="exp-subheader">
+                        <span>${exp.Role}</span>
+                        <span>${exp.StartDate} - Present</span>
+                    </div>
+                    <ul>${bullets}</ul>
+                </div>
+            `;
+
+            // Skills
+            const skillsHtml = data.Skills.PrimarySkills.map(s => `
+                <tr>
+                    <td class="skill-label">${s.Category}:</td>
+                    <td>${s.Items.join(', ')}</td>
+                </tr>
+            `).join('');
+
+            // Projects
+            const projHtml = exp.Projects.slice(0, 4).map(p => `
+                <div class="project-line">
+                    <span class="proj-name">${p.ProjectName}:</span> 
+                    <span class="proj-desc">${p.Description} <em>[${p.TechUsed.slice(0, 4).join(', ')}]</em></span>
+                </div>
+            `).join('');
+
+            const html = `
+                <header>
+                    <h1>${data.PersonalInfos.Name}</h1>
+                    <div class="contact-info">
+                        ${data.PersonalInfos.PhoneNumber} | ${data.PersonalInfos.Gmail} | ${data.PersonalInfos.CurrentLocation}
+                        <br>
+                        <a href="${data.Profiles.LinkedIn}">LinkedIn</a> | 
+                        <a href="${data.Profiles.GitHub}">GitHub</a> | 
+                        <a href="${data.Profiles.Portfolio}">Portfolio</a>
+                    </div>
+                </header>
+
+                <div class="section">
+                    <h2>Professional Summary</h2>
+                    <div class="summary">${data.Summary}</div>
+                </div>
+
+                <div class="section">
+                    <h2>Technical Skills</h2>
+                    <table class="skills-table">
+                        ${skillsHtml}
+                    </table>
+                </div>
+
+                <div class="section">
+                    <h2>Work Experience</h2>
+                    ${expHtml}
+                </div>
+
+                <div class="section">
+                     <h2>Key Projects</h2>
+                     ${projHtml}
+                </div>
+
+                <div class="section">
+                    <h2>Education</h2>
+                    ${data.Education.map(e => `
+                        <div class="edu-entry">
+                            <div class="edu-flex">
+                                <span><strong>${e.University}</strong></span>
+                                <span>${e.StartYear} - ${e.EndYear}</span>
+                            </div>
+                             <div class="edu-flex">
+                                <span>${e.Degree} in ${e.Branch}</span>
+                                <span>CGPA: ${e.CGPA}</span>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            document.getElementById('content').innerHTML = html;
+        });
+    </script>
+</body>
+
+</html>

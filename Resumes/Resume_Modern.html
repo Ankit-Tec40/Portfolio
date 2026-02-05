@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resume - Modern</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --header-bg: #1e3a8a;
+            /* Indigo 900 */
+            --header-text: #ffffff;
+            --accent: #2563eb;
+            /* Blue 600 */
+            --bg: #ffffff;
+            --gray: #64748b;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #e5e7eb;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header Region */
+        .header {
+            background: var(--header-bg);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .name-role h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .name-role .role {
+            font-size: 11pt;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4px;
+            text-align: right;
+            font-size: 8.5pt;
+        }
+
+        .contact-grid a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .contact-grid i {
+            margin-right: 5px;
+            width: 15px;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* Layout */
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            /* 66% - 33% split */
+            flex-grow: 1;
+        }
+
+        .left-col {
+            padding: 20px 25px;
+            border-right: 1px solid #f1f5f9;
+        }
+
+        .right-col {
+            padding: 20px 20px;
+            background: #fafafa;
+        }
+
+        /* Typography */
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11pt;
+            color: var(--header-bg);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 5px;
+            margin: 0 0 15px 0;
+        }
+
+        /* Left Column Items */
+        .summary {
+            font-size: 9pt;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .exp-block {
+            margin-bottom: 20px;
+        }
+
+        .exp-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-weight: 700;
+            font-size: 11pt;
+            color: #1e293b;
+        }
+
+        .exp-role {
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 9.5pt;
+        }
+
+        .date {
+            font-size: 8.5pt;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        ul.bullets {
+            padding-left: 15px;
+            margin: 0;
+        }
+
+        ul.bullets li {
+            margin-bottom: 4px;
+            font-size: 8.5pt;
+            color: #334155;
+            text-align: justify;
+        }
+
+        .proj-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .proj-card {
+            background: #f8fafc;
+            padding: 8px;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .proj-name {
+            font-weight: 700;
+            font-size: 9pt;
+            color: #0f172a;
+            margin-bottom: 2px;
+        }
+
+        .proj-tech {
+            font-size: 7.5pt;
+            color: var(--accent);
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .proj-desc {
+            font-size: 8pt;
+            color: #475569;
+            line-height: 1.3;
+        }
+
+        /* Right Column Items */
+        .skill-group {
+            margin-bottom: 15px;
+        }
+
+        .skill-header {
+            font-weight: 700;
+            font-size: 9pt;
+            color: #334155;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .tag {
+            background: white;
+            border: 1px solid #cbd5e1;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 7.5pt;
+            color: #475569;
+        }
+
+        .edu-block {
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        .degree {
+            font-weight: 700;
+            font-size: 9pt;
+            color: #1e293b;
+        }
+
+        .school {
+            font-size: 8.5pt;
+            color: var(--gray);
+        }
+
+        .year {
+            font-size: 8pt;
+            color: #94a3b8;
+        }
+
+        /* Print Override */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page" id="app"></div>
+
+    <script>
+        fetch('resumeData.json').then(r => r.json()).then(data => {
+            // Left Col
+            const exp = data.WorkExperience[0];
+            const relevantProjects = exp.Projects.slice(0, 4); // Top 4 Pro
+
+            // Right Col
+            const skills = data.Skills.PrimarySkills;
+
+            const html = `
+                <header class="header">
+                    <div class="name-role">
+                        <h1>${data.PersonalInfos.Name}</h1>
+                        <div class="role">${data.PersonalInfos.Heading}</div>
+                    </div>
+                    <div class="contact-grid">
+                        <a href="mailto:${data.PersonalInfos.Gmail}"><i class="fas fa-envelope"></i> ${data.PersonalInfos.Gmail}</a>
+                        <a href="tel:${data.PersonalInfos.PhoneNumber}"><i class="fas fa-phone"></i> ${data.PersonalInfos.PhoneNumber}</a>
+                        <a href="${data.Profiles.LinkedIn}"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+                         <a href="${data.Profiles.Portfolio}"><i class="fas fa-globe"></i> Portfolio</a>
+                         <span><i class="fas fa-map-marker-alt"></i> ${data.PersonalInfos.CurrentLocation}</span>
+                    </div>
+                </header>
+
+                <div class="content">
+                    <div class="left-col">
+                        <section>
+                            <h2>Professional Profile</h2>
+                            <div class="summary">${data.Summary}</div>
+                        </section>
+
+                        <section>
+                            <h2>Experience</h2>
+                            <div class="exp-block">
+                                <div class="exp-head">
+                                    <div>
+                                        <div class="company">${exp.CompanyName}</div>
+                                        <div class="exp-role">${exp.Role}</div>
+                                    </div>
+                                    <div class="date">${exp.StartDate} - Present</div>
+                                </div>
+                                <ul class="bullets">
+                                    ${exp.Responsibilities.slice(0, 7).map(r => `<li>${r}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2>Selected Projects</h2>
+                            <div class="proj-grid">
+                                ${relevantProjects.map(p => `
+                                    <div class="proj-card">
+                                        <div class="proj-name">${p.ProjectName}</div>
+                                        <div class="proj-tech">${p.TechUsed.slice(0, 3).join(', ')}</div>
+                                        <div class="proj-desc">${p.Description}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="right-col">
+                        <section>
+                            <h2>Technical Skills</h2>
+                            ${skills.map(cat => `
+                                <div class="skill-group">
+                                    <span class="skill-header">${cat.Category}</span>
+                                    <div class="tags">
+                                        ${cat.Items.map(i => `<span class="tag">${i}</span>`).join('')}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </section>
+
+                        <section>
+                            <h2>Education</h2>
+                            ${data.Education.map(e => `
+                                <div class="edu-block">
+                                    <div class="degree">${e.Degree}</div>
+                                    <div class="school">${e.College}</div>
+                                    <div class="year">${e.StartYear} - ${e.EndYear}</div>
+                                </div>
+                            `).join('')}
+                        </section>
+                        
+                         <section>
+                            <h2>Certifications</h2>
+                             ${data.Certifications.slice(0, 3).map(c => `
+                                <div class="edu-block" style="border:none; margin-bottom:5px;">
+                                    <div class="degree" style="font-size:8.5pt">${c.Title}</div>
+                                    <div class="school" style="font-size:8pt">${c.Issuer}</div>
+                                </div>
+                            `).join('')}
+                        </section>
+                    </div>
+                </div>
+            `;
+            document.getElementById('app').innerHTML = html;
+        });
+    </script>
+</body>
+
+</html>

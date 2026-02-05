@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resume - Creative</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --brand: #e74c3c;
+            /* Coral Red */
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #dadada;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            display: grid;
+            grid-template-columns: 70mm 1fr;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .side {
+            background: var(--dark);
+            color: white;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: right;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 0 10px auto;
+            /* Placeholder for image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30pt;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .side-title {
+            font-size: 12pt;
+            font-weight: 600;
+            color: var(--brand);
+            margin-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .contact-item {
+            font-size: 8.5pt;
+            margin-bottom: 8px;
+            color: #bdc3c7;
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-item i {
+            margin-left: 8px;
+            color: var(--brand);
+        }
+
+        .skill-item {
+            font-size: 9pt;
+            margin-bottom: 5px;
+            color: #ecf0f1;
+        }
+
+        .skill-group {
+            margin-bottom: 15px;
+        }
+
+        .skill-cat {
+            font-size: 8pt;
+            color: #95a5a6;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Main Content */
+        .main {
+            padding: 30px 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28pt;
+            line-height: 1;
+            color: var(--dark);
+        }
+
+        .role {
+            font-size: 12pt;
+            color: var(--brand);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::after {
+            content: "";
+            flex-grow: 1;
+            height: 2px;
+            background: #eee;
+            margin-left: 15px;
+        }
+
+        .summary {
+            font-size: 9pt;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .exp-box {
+            border-left: 3px solid var(--brand);
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .job-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .job-company {
+            font-size: 10pt;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            padding-left: 15px;
+            margin: 0;
+        }
+
+        li {
+            font-size: 9pt;
+            color: #555;
+            margin-bottom: 4px;
+        }
+
+        .proj-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .proj {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .p-name {
+            font-weight: 600;
+            font-size: 9.5pt;
+            color: var(--dark);
+        }
+
+        .p-tech {
+            font-size: 8pt;
+            color: var(--brand);
+            margin-bottom: 4px;
+        }
+
+        .p-desc {
+            font-size: 8.5pt;
+            color: #666;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page" id="app"></div>
+
+    <script>
+        fetch('resumeData.json').then(r => r.json()).then(data => {
+            const exp = data.WorkExperience[0];
+
+            // Sidebar Skills
+            const skillsHtml = data.Skills.PrimarySkills.map(cat => `
+                <div class="skill-group">
+                    <div class="skill-cat">${cat.Category}</div>
+                    ${cat.Items.map(i => `<div class="skill-item">${i}</div>`).join('')}
+                </div>
+            `).join('');
+
+            const html = `
+                <aside class="side">
+                    <div class="profile-pic"><i class="fas fa-user"></i></div>
+                    
+                    <div>
+                        <div class="side-title">Contact</div>
+                        <div class="contact-item"><a href="tel:${data.PersonalInfos.PhoneNumber}">${data.PersonalInfos.PhoneNumber}</a> <i class="fas fa-phone"></i></div>
+                        <div class="contact-item"><a href="mailto:${data.PersonalInfos.Gmail}">${data.PersonalInfos.Gmail}</a> <i class="fas fa-envelope"></i></div>
+                        <div class="contact-item">${data.PersonalInfos.CurrentLocation} <i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-item"><a href="${data.Profiles.LinkedIn}">LinkedIn</a> <i class="fab fa-linkedin"></i></div>
+                        <div class="contact-item"><a href="${data.Profiles.Portfolio}">Portfolio</a> <i class="fas fa-globe"></i></div>
+                    </div>
+
+                    <div>
+                        <div class="side-title">Education</div>
+                        ${data.Education.map(e => `
+                            <div style="margin-bottom:10px;">
+                                <div style="font-weight:600; font-size:9.5pt; color:white;">${e.Degree}</div>
+                                <div style="font-size:8.5pt; color:#bdc3c7;">${e.College}</div>
+                                <div style="font-size:8pt; color:#95a5a6;">${e.StartYear}-${e.EndYear}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div>
+                        <div class="side-title">Expertise</div>
+                        ${skillsHtml}
+                    </div>
+                </aside>
+
+                <main class="main">
+                    <header>
+                        <h1>${data.PersonalInfos.Name}</h1>
+                        <div class="role">${data.PersonalInfos.Heading}</div>
+                    </header>
+
+                    <section>
+                        <div class="section-title">Profile</div>
+                        <div class="summary">${data.Summary}</div>
+                    </section>
+                    
+                    <section>
+                        <div class="section-title">Experience</div>
+                        <div class="exp-box">
+                            <div class="job-title">${exp.Role}</div>
+                            <div class="job-company">${exp.CompanyName} • ${exp.StartDate} - Present</div>
+                            <ul>
+                                ${exp.Responsibilities.slice(0, 6).map(r => `<li>${r}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="section-title">Featured Projects</div>
+                        <div class="proj-grid">
+                            ${exp.Projects.slice(0, 4).map(p => `
+                                <div class="proj">
+                                    <div class="p-name">${p.ProjectName}</div>
+                                    <div class="p-tech">${p.TechUsed.slice(0, 3).join(', ')}</div>
+                                    <div class="p-desc">${p.Description}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </section>
+                </main>
+            `;
+            document.getElementById('app').innerHTML = html;
+        });
+    </script>
+</body>
+
+</html>

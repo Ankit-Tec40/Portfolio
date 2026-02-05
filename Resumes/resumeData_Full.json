@@ -5,6 +5,7 @@
         "Gmail": "ankit.tec40@gmail.com",
         "HomeTown": "Bihar",
         "CurrentLocation": "Noida",
+        "DateOfBirth-off": "",
         "Gender": "Male",
         "Heading": "Backend Developer | .NET | Python | SQL | REST APIs",
         "StartDate": "Sept-2022",
@@ -13,7 +14,11 @@
     "Profiles": {
         "LinkedIn": "https://www.linkedin.com/in/ankit991999",
         "GitHub": "https://github.com/Ankit-Tec40",
-        "Portfolio": "https://ankit-tec40.github.io/Portfolio"
+        "Portfolio": "https://ankit-tec40.github.io/Portfolio",
+        "LeetCode-off": "",
+        "HackerRank-off": "",
+        "Codeforces-off": "",
+        "Twitter-off": ""
     },
     "Summary": "Backend Engineer with 3+ years of experience building and modernizing large-scale flight booking systems using .NET and Python. Strong expertise in designing asynchronous REST APIs, working across integrations for multiple third-party airline providers, and migrating legacy WCF platforms to modern .NET 8 services. Experienced in SQL Server and MongoDB, internal tooling, scheduler services, and Linux-based deployments. Proven ability to work on high-traffic, business-critical systems with a focus on performance, scalability, and reliability.",
     "Education": [
@@ -264,6 +269,51 @@
                 "Designed and deployed a full-stack web application",
                 "Implemented responsive UI with AngularJS"
             ]
+        },
+        {
+            "ProjectName": "Full Screen Clock – Android App",
+            "Description": "Designed a full-screen digital clock app for tablets and mobile devices. Used for visibility during study sessions, desk timers, and digital wall clocks. Supports 12/24-hour format with custom fonts and themes.",
+            "GitHubURL": "",
+            "LiveDemoURL": "",
+            "TechUsed": [
+                "Java",
+                "Android SDK"
+            ],
+            "Role": "Solo developer",
+            "Highlights": [
+                "Included always-on display mode for night use",
+                "Published during college as a practical utility"
+            ]
+        },
+        {
+            "ProjectName": "Math Tables Learner – Android App",
+            "Description": "Built an interactive math tables app to help kids learn and practice multiplication tables. Includes audio-based teaching, flashcard mode, and a quiz/test module with scoring.",
+            "GitHubURL": "",
+            "LiveDemoURL": "",
+            "TechUsed": [
+                "Java",
+                "Android SDK"
+            ],
+            "Role": "Solo developer",
+            "Highlights": [
+                "Supports tables up to 99",
+                "Audio-enabled teaching mode",
+                "Gamified test mode with score tracking"
+            ]
+        },
+        {
+            "ProjectName": "Maths Practice App – Calculations",
+            "Description": "Created an app to help users practice fast mental math: addition, subtraction, multiplication, and division. Used for improving speed and accuracy, with difficulty scaling and timed test challenges.",
+            "GitHubURL": "",
+            "LiveDemoURL": "",
+            "TechUsed": [
+                "Java",
+                "Android SDK"
+            ],
+            "Role": "Solo developer",
+            "Highlights": [
+                "Designed adaptive test modes (easy to expert)"
+            ]
         }
     ],
     "Skills": {
@@ -370,6 +420,25 @@
                 ]
             },
             {
+                "Category": "AI / ML (Academic Background)",
+                "Items": [
+                    "Machine Learning (College Major)",
+                    "Artificial Intelligence Fundamentals",
+                    "Supervised & Unsupervised Learning",
+                    "Model Evaluation & Validation Concepts",
+                    "Data Preprocessing & Feature Engineering (Basic)",
+                    "Scikit-learn (Academic / Practice Level)",
+                    "Probability & Statistics for ML (Basic)"
+                ]
+            },
+            {
+                "Category": "Academic Exposure",
+                "Items": [
+                    "GATE – Data Science & Artificial Intelligence (Appeared Twice)",
+                    "Strong academic performance in ML-related subjects"
+                ]
+            },
+            {
                 "Category": "Developer Productivity & Tools",
                 "Items": [
                     "Jupyter Notebook",
@@ -379,11 +448,22 @@
             }
         ]
     },
+    "Achievements-off": [
+        {
+            "Title": "",
+            "Description": "",
+            "Year": ""
+        }
+    ],
     "LanguagesKnown": [
         "English",
         "Hindi",
         "Bhojpuri"
     ],
+    "Interests-off": [],
+    "Availability-off": "",
     "NoticePeriod": "2 Months",
-    "Availability": "Exploring Opportunities"
+    "Availability": "Exploring Opportunities",
+    "ExpectedSalary-off": "",
+    "Declaration-off": ""
 }
