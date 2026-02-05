@@ -2,457 +2,331 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ankit Kumar - Backend Developer Resume</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #0f172a;
-      --secondary: #334155;
-      --accent: #2563eb;
-      --text: #1e293b;
-      --border: #e2e8f0;
-      --bg: #ffffff;
-      --sidebar-bg: #f1f5f9;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Minimal (1 Page)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --text-main: #222;
+            --text-light: #555;
+            --accent: #2c3e50;
+            --border: #ddd;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.35;
-      color: var(--text);
-      background: #e2e8f0;
-      font-size: 8.5pt;
-      /* High density font size */
-    }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f5f5f5;
+            color: var(--text-main);
+            font-size: 9pt;
+            /* Compact font */
+            line-height: 1.35;
+        }
 
-    .resume-container {
-      width: 210mm;
-      height: 297mm;
-      margin: 20px auto;
-      background: var(--bg);
-      display: grid;
-      grid-template-columns: 60mm 1fr;
-      /* Compact Sidebar */
-      overflow: hidden;
-      /* Strict A4 limit */
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            margin: 20px auto;
+            padding: 12mm 15mm;
+            /* Balanced margins */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            /* Strict 1-page */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-    /* --- Sidebar --- */
-    .sidebar {
-      background: var(--primary);
-      color: #f8fafc;
-      padding: 20px 15px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 5px;
+            border-bottom: 1px solid var(--text-main);
+            padding-bottom: 10px;
+        }
 
-    .profile-header h1 {
-      font-size: 18pt;
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 5px;
-      color: white;
-    }
+        h1 {
+            font-size: 20pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            color: var(--accent);
+        }
 
-    .role-title {
-      font-size: 9pt;
-      color: #94a3b8;
-      font-weight: 500;
-      margin-bottom: 15px;
-    }
+        .role {
+            font-size: 10pt;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
 
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-size: 8pt;
-    }
+        .contact-line {
+            font-size: 8.5pt;
+            color: #444;
+        }
 
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #cbd5e1;
-      text-decoration: none;
-    }
+        .contact-line a {
+            color: inherit;
+            text-decoration: none;
+            margin: 0 6px;
+        }
 
-    .contact-item i {
-      width: 12px;
-      text-align: center;
-      color: #60a5fa;
-    }
+        .contact-line i {
+            color: var(--accent);
+            margin-right: 3px;
+        }
 
-    .sidebar-section {
-      margin-top: 5px;
-    }
+        /* Sections */
+        .section {
+            margin-bottom: 8px;
+        }
 
-    .sidebar-title {
-      font-size: 10pt;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      border-bottom: 1px solid #475569;
-      padding-bottom: 3px;
-      margin-bottom: 8px;
-      color: white;
-      font-weight: 600;
-    }
+        h2 {
+            font-size: 11pt;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 6px;
+            color: var(--accent);
+            font-weight: 700;
+        }
 
-    .skill-cat {
-      margin-bottom: 8px;
-    }
+        /* Summary */
+        .summary {
+            text-align: justify;
+            font-size: 9pt;
+            color: #333;
+        }
 
-    .skill-cat-title {
-      font-size: 8pt;
-      font-weight: 600;
-      color: #e2e8f0;
-      margin-bottom: 2px;
-    }
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 4px 15px;
+            font-size: 9pt;
+        }
 
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3px;
-    }
+        .skill-cat {
+            font-weight: 700;
+            color: #333;
+            white-space: nowrap;
+        }
 
-    .tag {
-      background: #334155;
-      color: #f1f5f9;
-      padding: 1px 4px;
-      border-radius: 2px;
-      font-size: 7.5pt;
-    }
+        .skill-list {
+            color: #444;
+        }
 
-    .edu-item,
-    .cert-item {
-      margin-bottom: 8px;
-    }
+        /* Experience */
+        .exp-item {
+            margin-bottom: 8px;
+        }
 
-    .degree {
-      font-weight: 600;
-      font-size: 8.5pt;
-      color: #f1f5f9;
-    }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2px;
+        }
 
-    .school {
-      font-size: 7.5pt;
-      color: #94a3b8;
-    }
+        .company {
+            font-weight: 700;
+            font-size: 10pt;
+        }
 
-    .date-sm {
-      font-size: 7pt;
-      color: #64748b;
-    }
+        .exp-role {
+            font-weight: 600;
+            font-style: italic;
+            color: #444;
+        }
 
-    /* --- Main Content --- */
-    .main-content {
-      padding: 20px 25px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+        .date {
+            font-size: 8.5pt;
+            color: #666;
+        }
 
-    .section-title {
-      font-size: 11pt;
-      text-transform: uppercase;
-      color: var(--primary);
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 2px;
-      margin-bottom: 8px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+        .tech-stack {
+            font-size: 8pt;
+            color: #555;
+            margin-bottom: 2px;
+        }
 
-    .section-title i {
-      color: var(--accent);
-      font-size: 10pt;
-    }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
 
-    .summary {
-      text-align: justify;
-      font-size: 8.5pt;
-      margin-bottom: 5px;
-    }
+        li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 1px;
+            text-align: justify;
+        }
 
-    /* Experience */
-    .exp-item {
-      margin-bottom: 10px;
-    }
+        li::before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 10pt;
+            line-height: 1;
+            top: -1px;
+        }
 
-    .exp-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 3px;
-    }
+        /* Projects - Compact Grid */
+        .project-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
 
-    .company {
-      font-weight: 700;
-      font-size: 10pt;
-      color: var (--primary);
-    }
+        .proj-item {
+            margin-bottom: 4px;
+        }
 
-    .role {
-      font-weight: 600;
-      color: var(--accent);
-      font-size: 9pt;
-    }
+        .proj-head {
+            font-weight: 700;
+            font-size: 9.5pt;
+            color: #222;
+        }
 
-    .api-row {
-      font-size: 7.5pt;
-      background: #f8fafc;
-      padding: 3px 6px;
-      border-radius: 3px;
-      margin-bottom: 4px;
-      border-left: 2px solid var(--accent);
-    }
+        .proj-tech {
+            font-size: 8pt;
+            color: #666;
+            font-style: italic;
+        }
 
-    .bullets {
-      list-style-type: none;
-      padding-left: 0;
-    }
+        .proj-desc {
+            font-size: 8.5pt;
+            color: #444;
+        }
 
-    .bullets li {
-      position: relative;
-      padding-left: 10px;
-      margin-bottom: 2px;
-      text-align: justify;
-    }
+        /* Education */
+        .edu-flex {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9pt;
+        }
 
-    .bullets li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
+        @media print {
+            body {
+                background: white;
+            }
 
-    /* Projects Grid - High Density */
-    .projects-grid {
-      display: grid;
-      gap: 8px;
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .listing-card {
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 6px;
-      background: #fafafa;
-    }
-
-    .listing-title {
-      font-size: 8.5pt;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 1px;
-    }
-
-    .listing-tech {
-      font-size: 7pt;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-
-    .listing-desc {
-      font-size: 7.5pt;
-      color: var(--secondary);
-      line-height: 1.25;
-    }
-
-    /* Print utils */
-    .download-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    @media print {
-      body {
-        background: white;
-        -webkit-print-color-adjust: exact;
-      }
-
-      .resume-container {
-        margin: 0;
-        box-shadow: none;
-        height: 100vh;
-      }
-
-      .download-btn {
-        display: none;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            .page {
+                margin: 0;
+                box-shadow: none;
+                height: 100vh;
+                padding: 10mm;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <button class="download-btn" onclick="window.print()">Download PDF</button>
+    <div class="page" id="content"></div>
 
-  <div class="resume-container" id="resume-content">
-    <!-- Content injected here -->
-  </div>
+    <script>
+        async function load() {
+            const res = await fetch('resumeData.json');
+            const data = await res.json();
 
-  <script>
-    async function loadResume() {
-      try {
-        const res = await fetch('resumeData.json');
-        const data = await res.json();
-        render(data);
-      } catch (e) { console.error(e); }
-    }
+            // Skills Processor
+            const skills = data.Skills.PrimarySkills.map(s =>
+                `<div class="skill-row"><span class="skill-cat">${s.Category}:</span> <span class="skill-list">${s.Items.join(', ')}</span></div>`
+            ).join('');
 
-    function render(data) {
-      // Sidebar Content
-      const skills = [...data.Skills.PrimarySkills, ...(data.Skills.FamiliarWith || [])];
-      const skillsHtml = skills.map(cat => `
-            <div class="skill-cat">
-                <div class="skill-cat-title">${cat.Category}</div>
-                <div class="skill-tags">
-                    ${cat.Items.map(i => `<span class="tag">${i}</span>`).join('')}
+            // Experience
+            const exp = data.WorkExperience[0];
+            const bullets = exp.Responsibilities.slice(0, 6).map(r => `<li>${r}</li>`).join(''); // Limit bullets for space
+
+            // Professional Projects (Top 4)
+            const profProj = exp.Projects.slice(0, 4).map(p => `
+                <div class="proj-item">
+                    <div class="proj-head">${p.ProjectName}</div>
+                    <div class="proj-tech">${p.TechUsed.slice(0, 4).join(', ')}</div>
+                    <div class="proj-desc">${p.Description}</div>
                 </div>
-            </div>
-        `).join('');
+            `).join('');
 
-      const sidebar = `
-            <aside class="sidebar">
-                <div class="profile-header">
+            // Peronsal Project (Only TecWec or Top 1)
+            const persProj = data.PersonalProjects.slice(0, 1).map(p => `
+                 <div class="proj-item">
+                    <div class="proj-head">${p.ProjectName} (Personal)</div>
+                    <div class="proj-tech">${p.TechUsed.join(', ')}</div>
+                    <div class="proj-desc">${p.Description}</div>
+                </div>
+            `).join('');
+
+            const html = `
+                <header>
                     <h1>${data.PersonalInfos.Name}</h1>
-                    <div class="role-title">${data.PersonalInfos.Heading.split('|')[0]}</div>
-                </div>
-                
-                <div class="contact-info">
-                     <a href="tel:${data.PersonalInfos.PhoneNumber}" class="contact-item"><i class="fas fa-phone"></i> ${data.PersonalInfos.PhoneNumber}</a>
-                     <a href="mailto:${data.PersonalInfos.Gmail}" class="contact-item"><i class="fas fa-envelope"></i> ${data.PersonalInfos.Gmail}</a>
-                     <div class="contact-item"><i class="fas fa-map-marker-alt"></i> ${data.PersonalInfos.CurrentLocation}</div>
-                     <a href="${data.Profiles.LinkedIn}" class="contact-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                     <a href="${data.Profiles.GitHub}" class="contact-item"><i class="fab fa-github"></i> GitHub</a>
-                     <a href="${data.Profiles.Portfolio}" class="contact-item"><i class="fas fa-globe"></i> Portfolio</a>
-                </div>
+                    <div class="role">${data.PersonalInfos.Heading}</div>
+                    <div class="contact-line">
+                        <a href="tel:${data.PersonalInfos.PhoneNumber}"><i class="fas fa-phone"></i>${data.PersonalInfos.PhoneNumber}</a>
+                        <a href="mailto:${data.PersonalInfos.Gmail}"><i class="fas fa-envelope"></i>${data.PersonalInfos.Gmail}</a>
+                        <span><i class="fas fa-map-marker-alt"></i>${data.PersonalInfos.CurrentLocation}</span>
+                        <a href="${data.Profiles.LinkedIn}"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                        <a href="${data.Profiles.GitHub}"><i class="fab fa-github"></i>GitHub</a>
+                         <a href="${data.Profiles.Portfolio}"><i class="fas fa-globe"></i>Portfolio</a>
+                    </div>
+                </header>
 
-                <div class="sidebar-section">
-                    <div class="sidebar-title">Skills</div>
-                    ${skillsHtml}
-                </div>
-
-                <div class="sidebar-section">
-                    <div class="sidebar-title">Education</div>
-                    ${data.Education.map(e => `
-                        <div class="edu-item">
-                            <div class="degree">${e.Degree}</div>
-                            <div class="school">${e.College}</div>
-                            <div class="date-sm">${e.StartYear} - ${e.EndYear}</div>
-                        </div>
-                    `).join('')}
-                </div>
-
-                <div class="sidebar-section">
-                    <div class="sidebar-title">Certifications</div>
-                    ${data.Certifications.map(c => `
-                        <div class="cert-item">
-                            <div class="degree">${c.Title}</div>
-                            <div class="school">${c.Issuer}</div>
-                        </div>
-                    `).join('')}
-                </div>
-            </aside>
-        `;
-
-      // Main Content
-
-      // Experience
-      const exp = data.WorkExperience[0];
-      const apiHtml = (exp.ExternalAPIs && exp.ExternalAPIs.Integrated)
-        ? `<div class="api-row"><strong>Integrated:</strong> ${exp.ExternalAPIs.Integrated.slice(0, 6).join(', ')}...</div>`
-        : '';
-
-      // Professional Projects (Grid of 3)
-      const profProjHtml = data.WorkExperience[0].Projects.map(p => `
-            <div class="listing-card">
-                <div class="listing-title">${p.ProjectName}</div>
-                <div class="listing-tech">${p.TechUsed.slice(0, 3).join(', ')}</div>
-                <div class="listing-desc">${p.Description}</div>
-            </div>
-        `).join('');
-
-      // Personal Projects (Grid of 2)
-      const persProjHtml = data.PersonalProjects.map(p => `
-            <div class="listing-card">
-                <div class="listing-title">${p.ProjectName}</div>
-                <div class="listing-tech">${p.TechUsed.join(', ')}</div>
-                <div class="listing-desc">${p.Description}</div>
-            </div>
-        `).join('');
-
-      const main = `
-            <main class="main-content">
                 <div class="section">
-                    <div class="section-title"><i class="fas fa-user-tie"></i> Summary</div>
+                    <h2>Summary</h2>
                     <div class="summary">${data.Summary}</div>
                 </div>
 
                 <div class="section">
-                    <div class="section-title"><i class="fas fa-briefcase"></i> Experience</div>
+                    <h2>Skills</h2>
+                    <div class="skills-grid">
+                        ${data.Skills.PrimarySkills.map(cat => `
+                            <span class="skill-cat">${cat.Category}</span>
+                            <span class="skill-list">${cat.Items.join(', ')}</span>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Experience</h2>
                     <div class="exp-item">
                         <div class="exp-header">
-                            <div><span class="company">${exp.CompanyName}</span> <span class="role">| ${exp.Role}</span></div>
-                            <span class="date-sm" style="font-size:9pt">${exp.StartDate} - ${exp.EndDate}</span>
+                            <span class="company">${exp.CompanyName}</span>
+                            <span class="exp-role">${exp.Role}</span>
+                            <span class="date">${exp.StartDate} - ${exp.EndDate}</span>
                         </div>
-                        ${apiHtml}
-                        <ul class="bullets">
-                            ${exp.Responsibilities.map(r => `<li>${r}</li>`).join('')}
-                        </ul>
+                        <div class="tech-stack"><strong>Tech:</strong> ${exp.TechUsed.slice(0, 10).join(', ')}...</div>
+                        <ul>${bullets}</ul>
                     </div>
                 </div>
 
                 <div class="section">
-                    <div class="section-title"><i class="fas fa-building"></i> Professional Projects</div>
-                    <div class="projects-grid grid-3">
-                        ${profProjHtml}
+                    <h2>Key Projects</h2>
+                    <div class="project-row">
+                        ${profProj}
                     </div>
                 </div>
 
                 <div class="section">
-                    <div class="section-title"><i class="fas fa-laptop-code"></i> Personal Projects</div>
-                    <div class="projects-grid grid-2">
-                        ${persProjHtml}
-                    </div>
+                     <h2>Education</h2>
+                     ${data.Education.map(e => `
+                        <div class="edu-flex">
+                            <strong>${e.Degree} in ${e.Branch}</strong>
+                            <span>${e.College} (${e.StartYear}-${e.EndYear})</span>
+                        </div>
+                     `).join('')}
                 </div>
-            </main>
-        `;
-
-      document.getElementById('resume-content').innerHTML = sidebar + main;
-    }
-
-    loadResume();
-  </script>
+            `;
+            document.getElementById('content').innerHTML = html;
+        }
+        load();
+    </script>
 </body>
 
 </html>
