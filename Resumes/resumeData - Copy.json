@@ -15,7 +15,7 @@
         "GitHub": "https://github.com/Ankit-Tec40",
         "Portfolio": "https://ankit-tec40.github.io/Portfolio"
     },
-    "Summary": "Backend Engineer with 3+ years of experience building and modernizing large-scale flight booking systems using .NET and Python. Strong expertise in designing asynchronous REST APIs, working across integrations for multiple third-party airline providers, and migrating legacy WCF platforms to modern .NET 8 services. Experienced in SQL Server and MongoDB, internal tooling, scheduler services. Proven ability to work on high-traffic, business-critical systems with a focus on performance, scalability, and reliability.",
+    "Summary": "Backend Engineer with 3+ years of experience building and modernizing large-scale flight booking systems using .NET and Python. Strong expertise in designing asynchronous REST APIs, working across integrations for multiple third-party airline providers, and migrating legacy WCF platforms to modern .NET 8 services. Experienced in SQL Server and MongoDB, internal tooling, scheduler services, and Linux-based deployments. Proven ability to work on high-traffic, business-critical systems with a focus on performance, scalability, and reliability.",
     "Education": [
         {
             "Degree": "Bachelor of Technology",
@@ -97,7 +97,7 @@
     "WorkExperience": [
         {
             "CompanyName": "EaseMyTrip",
-            "Role": "Software Developer (Backend)",
+            "Role": "Software Developer (Backend / Platform)",
             "StartDate": "Sept-2022",
             "EndDate": "Present",
             "Location": "Noida, India",
@@ -286,6 +286,7 @@
                     "RESTful API Design",
                     "Async / Await Programming",
                     "WCF to REST Migration",
+                    "JWT Authentication & Authorization",
                     "API Versioning",
                     "Third-Party API Integration",
                     "High-Traffic API Development"
@@ -304,8 +305,8 @@
             {
                 "Category": "Databases",
                 "Items": [
-                    "SQL Server",
-                    "MongoDB"
+                    "SQL Server (Query Optimization, Indexing)",
+                    "MongoDB (Schema Design, Aggregations)"
                 ]
             },
             {
@@ -337,6 +338,7 @@
                     "VS Code",
                     "Postman",
                     "Kestrel",
+                    "Linux & Windows Hosting",
                     "Console Applications",
                     "Background Scheduler Services"
                 ]
