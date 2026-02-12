@@ -244,7 +244,7 @@
 
             // Experience
             const exp = data.WorkExperience[0];
-            const bullets = exp.Responsibilities.slice(0, 6).map(r => `<li>${r}</li>`).join(''); // Limit bullets for space
+            const bullets = exp.Responsibilities.slice(0, 8).map(r => `<li>${r}</li>`).join(''); // Limit bullets for space
 
             // Professional Projects (Top 4)
             const profProj = exp.Projects.slice(0, 4).map(p => `
